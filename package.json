@@ -30,6 +30,13 @@
       "packagerConfig": {},
       "makers": [
         {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "background": "./assets/footsteps.png",
+            "format": "ULFO"
+          }
+        },
+        {
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "stepping_stone"
@@ -59,8 +66,8 @@
               "config": "./webpack.renderer.config.js",
               "entryPoints": [
                 {
-                  "html": "./src/renderer/index.html",
-                  "js": "./src/renderer/renderer.ts",
+                  "html": "./public/index.html",
+                  "js": "./src/renderer/renderer.tsx",
                   "name": "main_window"
                 }
               ]
@@ -73,21 +80,33 @@
   "devDependencies": {
     "@electron-forge/cli": "6.0.0-beta.47",
     "@electron-forge/maker-deb": "6.0.0-beta.47",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.47",
     "@electron-forge/maker-rpm": "6.0.0-beta.47",
     "@electron-forge/maker-squirrel": "6.0.0-beta.47",
     "@electron-forge/maker-zip": "6.0.0-beta.47",
     "@electron-forge/plugin-webpack": "6.0.0-beta.47",
+    "@hot-loader/react-dom": "^16.11.0",
     "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
-    "css-loader": "^3.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.0",
     "electron": "7.1.7",
     "fork-ts-checker-webpack-plugin": "^3.1.1",
     "node-loader": "^0.6.0",
+    "node-sass": "^4.13.0",
+    "react-hot-loader": "^4.12.18",
+    "sass-loader": "^8.0.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^6.2.1",
     "tslint": "^5.20.0",
     "typescript": "^3.7.0"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "electron-squirrel-startup": "^1.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.0"
   }
 }
