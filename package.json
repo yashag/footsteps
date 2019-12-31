@@ -1,6 +1,6 @@
 {
-  "name": "stepping-stone",
-  "productName": "stepping-stone",
+  "name": "footsteps",
+  "productName": "footsteps",
   "version": "1.0.0",
   "description": "A visual guide to creating node.js projects/packages",
   "main": ".webpack/main",
@@ -22,9 +22,9 @@
   "author": "Yasha Gootkin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yashag/stepping-stone/issues"
+    "url": "https://github.com/yashag/footsteps/issues"
   },
-  "homepage": "https://github.com/yashag/stepping-stone#readme",
+  "homepage": "https://github.com/yashag/footsteps#readme",
   "config": {
     "forge": {
       "packagerConfig": {},
@@ -39,7 +39,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "stepping_stone"
+            "name": "footsteps"
           }
         },
         {
