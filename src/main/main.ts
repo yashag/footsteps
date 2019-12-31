@@ -1,5 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 
+import * as browserWindowOptions from './browser-window-options.json';
+
 declare const MAIN_WINDOW_WEBPACK_ENTRY: any;
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -13,10 +15,7 @@ let mainWindow: Electron.BrowserWindow;
 
 const createWindow = () => {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
-    height: 600,
-    width: 800
-  });
+  mainWindow = new BrowserWindow(browserWindowOptions);
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
