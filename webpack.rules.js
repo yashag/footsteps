@@ -31,7 +31,7 @@ module.exports = rules = [
   },
   {
     test: /\.(scss|css)$/,
-    use: ["style-loader", "css-loader", "sass-loader"],
+    use: ["style-loader", "css-loader"],
   },
   {
     test: /\.(svg|ico|icns)$/,
