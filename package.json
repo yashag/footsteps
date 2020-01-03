@@ -87,6 +87,8 @@
     "@electron-forge/plugin-webpack": "6.0.0-beta.47",
     "@hot-loader/react-dom": "^16.11.0",
     "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.0",
     "electron": "7.1.7",
