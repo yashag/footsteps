@@ -10,7 +10,9 @@
     "quotemark": [true, "single"],
     "no-console": false,
     "trailing-comma": false,
-    "no-submodule-imports": false
+    "no-submodule-imports": false,
+    "interface-name": false,
+    "interface-over-type-literal": false
   },
   "rulesDirectory": []
 }

@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 
-import * as browserWindowOptions from './browser-window-options.json';
+import browserWindowOptions from './browser-window-options.json';
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 

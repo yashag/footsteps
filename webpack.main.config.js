@@ -18,7 +18,8 @@ module.exports = {
     alias: {
       '@main': path.join(__dirname, 'src/main/main'),
       '@models': path.join(__dirname, 'src/models'),
-      '@renderer': path.join(__dirname, 'src/renderer/renderer')
+      '@renderer': path.join(__dirname, 'src/renderer/renderer'),
+      '@assets': path.join(__dirname, 'assets'),
     },
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json']
   },

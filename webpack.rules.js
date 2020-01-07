@@ -1,4 +1,4 @@
-module.exports = rules = [
+module.exports = [
   // Add support for native node modules
   {
     test: /\.node$/,
@@ -31,7 +31,7 @@ module.exports = rules = [
   },
   {
     test: /\.(scss|css)$/,
-    use: ["style-loader", "css-loader"],
+    use: ["style-loader", "css-loader", "sass-loader"],
   },
   {
     test: /\.(svg|ico|icns)$/,
