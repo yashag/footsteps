@@ -1,7 +1,8 @@
+import { Button } from 'evergreen-ui';
 import React from 'react';
 import {hot} from 'react-hot-loader/root';
 
-import logo from '../../../../assets/footsteps.svg';
+import logo from '../../../../resources/footsteps.svg';
 import './welcome-page.scss';
 
 const WelcomePage: () => JSX.Element = () => (
@@ -15,7 +16,12 @@ const WelcomePage: () => JSX.Element = () => (
             You no longer have to memorize and worry about steps you forgot about.
             Just follow the footsteps!
         </p>
+        <div id='fss-welcome-actions'>
+            <Button iconAfter='arrow-right' height={36}>
+                Let's start
+            </Button>
+        </div>
     </div>
 );
 
-export default hot(WelcomePage);
+export default WelcomePage;

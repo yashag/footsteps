@@ -1,8 +1,9 @@
 :root {
-  --full-size: 100%;
+  --main-color: #69a68a;
 }
 
 html, body {
+  --full-size: 100%;
   width: var(--full-size);
   height: var(--full-size);
 }

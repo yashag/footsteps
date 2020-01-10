@@ -1,4 +1,4 @@
-div#fss-welcome-page {
+div#fss-page-type-page {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -14,7 +14,7 @@ div#fss-welcome-page {
     width: 3rem;
   }
 
-  div#fss-welcome-title {
+  div#fss-page-type-title {
     grid-area: title;
     display: flex;
     flex-flow: column;
@@ -23,10 +23,10 @@ div#fss-welcome-page {
 
     color: var(--main-color);
 
-    h1#fss-welcome-title {}
+    h1#fss-page-type-title {}
   }
 
-  p#fss-welcome-content {
+  p#fss-page-type-content {
     grid-area: content;
 
     padding: 0 4rem;
@@ -35,8 +35,29 @@ div#fss-welcome-page {
     text-align: center;
   }
 
-  div#fss-welcome-actions {
+  div#fss-page-type-actions {
     grid-area: actions;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+
     text-align: center;
+
+    button.fss-page-type-button {
+      width: 20rem;
+      padding: 0 1rem;
+
+      svg, img {
+        margin: 0;
+        width: 2rem;
+      }
+
+      span.fss-page-type-button-text {
+        display: inline-block;
+        margin-left: 1rem;
+      }
+    }
   }
 }
