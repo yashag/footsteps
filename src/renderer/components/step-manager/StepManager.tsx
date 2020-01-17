@@ -1,6 +1,6 @@
 import React, {Dispatch, SetStateAction, useState} from 'react';
 
-import {Steps, StepToComponent} from './steps';
+import {StepComponent, Steps, StepToComponent} from './steps';
 
 import ProjectTypePage from '../project-type-page/ProjectTypePage';
 import WelcomePage from '../welcome-page/WelcomePage';
@@ -9,17 +9,21 @@ import './step-manager.scss';
 
 const StepManager: () => JSX.Element = () => {
 
-    const [step, setStep]: [number, Dispatch<SetStateAction<number>>] = useState<number>(Steps.WELCOME);
+    const [step, setStep]: [Steps, Dispatch<SetStateAction<Steps>>] = useState<Steps>(Steps.WELCOME);
     const stepsMap: StepToComponent = {
         [Steps.WELCOME]: WelcomePage,
         [Steps.PROJECT_TYPE]: ProjectTypePage
     };
 
-    const currentStep: () => JSX.Element = stepsMap[step as Steps];
+    const currentStep: StepComponent = stepsMap[step];
+
+    const moveToStep: (nextPage: Steps) => void = (nextPage: Steps) => {
+        setStep(nextPage);
+    };
 
     return (
         <div id='fss-step-manager'>
-            {React.createElement(currentStep, {})}
+            {React.createElement(currentStep, {moveToStep})}
         </div>
     );
 };
