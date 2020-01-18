@@ -1,0 +1,22 @@
+footer#fss-footer {
+    position: absolute;
+    bottom: 0.4rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    height: 1rem;
+    width: var(--full-size);
+
+    text-align: center;
+
+    span {
+
+        a.fss-copyright-link {
+            text-decoration: none;
+            color: var(--link-color);
+        }
+    }
+}

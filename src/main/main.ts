@@ -54,5 +54,18 @@ app.on('activate', () => {
   }
 });
 
+app.on('web-contents-created', (e, contents) => {
+  contents.on('new-window', (event, url) => {
+    event.preventDefault();
+    require('open')(url);
+  });
+  contents.on('will-navigate', (event, url) => {
+    if (url !== contents.getURL()) {
+      event.preventDefault();
+      require('open')(url);
+    }
+  });
+});
+
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
