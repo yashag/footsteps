@@ -4,7 +4,7 @@ import React from 'react';
 import logo from '../../../../resources/footsteps.svg';
 import './welcome-page.scss';
 
-import {StepProps, Steps} from '../step-manager/steps';
+import {StepProps, Steps} from '../../types/steps/steps';
 
 const WelcomePage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
     const goToProjectTypeSelection: () => void = () => { moveToStep(Steps.PROJECT_TYPE); };

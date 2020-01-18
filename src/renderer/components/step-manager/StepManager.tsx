@@ -1,6 +1,6 @@
 import React, {Dispatch, SetStateAction, useState} from 'react';
 
-import {StepComponent, Steps, StepToComponent} from './steps';
+import {StepComponent, Steps, StepToComponent} from '../../types/steps/steps';
 
 import ProjectTypePage from '../project-type-page/ProjectTypePage';
 import WelcomePage from '../welcome-page/WelcomePage';
