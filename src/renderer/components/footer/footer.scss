@@ -1,14 +1,15 @@
 footer#fss-footer {
-    position: absolute;
-    bottom: 0.4rem;
+    flex-shrink: 0;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 
-    height: 1rem;
+    height: 2rem;
     width: var(--full-size);
+
+    background-color: var(--light-color);
 
     text-align: center;
 

@@ -19,12 +19,12 @@ const BasicInfoPage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
 
     return (
         <div id="fss-basic-info-page">
-            <div id="fss-basic-info-title">
-                <h1 id="fss-basic-info-title-text">Basic Information</h1>
-            </div>
-            <p id="fss-basic-info-content">
-                First, let's fill in the basic information needed to initialize your project in the form below.
-            </p>
+            <header id="fss-basic-info-header">
+                <h1 id="fss-basic-info-title">Basic Information</h1>
+                <p id="fss-basic-info-description">
+                    First, let's fill in the basic information needed to initialize your project in the form below.
+                </p>
+            </header>
             <form id="fss-basic-info-form" onSubmit={handleProjectInfoSubmit}>
                 <TextInputField id="fss-basic-info-form-project-name"
                                 className="fss-basic-info-form-field"

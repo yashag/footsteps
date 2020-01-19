@@ -8,10 +8,12 @@ import StepManager from "./step-manager/StepManager";
 import "./app.scss";
 
 const App: () => JSX.Element = () => (
-    <main id="fss-app">
-        <StepManager />
+    <>
+        <main id="fss-app">
+            <StepManager />
+        </main>
         <Footer />
-    </main>
+    </>
 );
 
 export default hot(App);

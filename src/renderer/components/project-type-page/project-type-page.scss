@@ -1,12 +1,13 @@
 div#fss-page-type-page {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-template-areas:
-          "title title title"
-          "content content content"
-          "actions actions actions";
+          "header"
+          "actions";
   justify-content: center;
+
+  padding: 0 4rem;
 
   height: var(--full-size);
 
@@ -14,26 +15,18 @@ div#fss-page-type-page {
     width: 3rem;
   }
 
-  div#fss-page-type-title {
-    grid-area: title;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+  header#fss-page-type-header {
+    grid-area: header;
 
-    color: var(--main-color);
+    h1#fss-page-type-title {
+      color: var(--main-color);
+    }
 
-    h1#fss-page-type-title {}
+    p#fss-page-type-description {
+      font-size: 20px;
+    }
   }
 
-  p#fss-page-type-content {
-    grid-area: content;
-
-    padding: 0 4rem;
-
-    font-size: 20px;
-    text-align: center;
-  }
 
   div#fss-page-type-actions {
     grid-area: actions;
@@ -41,9 +34,6 @@ div#fss-page-type-page {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
-    align-items: center;
-
-    text-align: center;
 
     button.fss-page-type-button {
       width: 20rem;
