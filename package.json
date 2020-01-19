@@ -2,7 +2,7 @@
   "name": "footsteps",
   "productName": "footsteps",
   "version": "1.0.0",
-  "description": "A visual guide to creating node.js projects/packages",
+  "description": "A visual interactive guide for creating projects/packages",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",

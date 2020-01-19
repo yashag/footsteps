@@ -1,6 +1,7 @@
 export enum Steps {
     WELCOME,
-    PROJECT_TYPE
+    PROJECT_TYPE,
+    BASIC_INFO
 }
 
 export interface StepProps {

@@ -1,0 +1,46 @@
+div#fss-basic-info-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+          "title title title"
+          "content content content"
+          ". form form";
+  justify-content: center;
+
+  height: var(--full-size);
+
+  .fss-logo {
+    width: 3rem;
+  }
+
+  div#fss-basic-info-title {
+    grid-area: title;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--main-color);
+
+    h1#fss-basic-info-title {}
+  }
+
+  p#fss-basic-info-content {
+    grid-area: content;
+
+    padding: 0 4rem;
+
+    font-size: 20px;
+    text-align: center;
+  }
+
+  form#fss-basic-info-form {
+    grid-area: form;
+
+    input.fss-basic-info-form-field {
+      width: 16rem;
+    }
+  }
+
+}
