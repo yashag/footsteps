@@ -1,4 +1,4 @@
-import {Button} from "evergreen-ui";
+import {Button, Heading, Paragraph} from "evergreen-ui";
 import React from "react";
 
 import logo from "../../../../resources/footsteps.svg";
@@ -13,13 +13,13 @@ const WelcomePage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
         <div id="fss-welcome-page">
             <div id="fss-welcome-title">
                 <img className="fss-logo" src={logo} alt="Footsteps"/>
-                <h1 id="fss-welcome-title-text">Welcome to Footsteps!</h1>
+                <Heading id="fss-welcome-title-text" is="h1" size={900}>Welcome to Footsteps!</Heading>
             </div>
-            <p id="fss-welcome-content">
+            <Paragraph id="fss-welcome-content" marginTop="default">
                 Footsteps will help you and guide you through the process of creating your own project.
                 You no longer have to memorize and worry about steps you forgot about.
                 Just follow the footsteps!
-            </p>
+            </Paragraph>
             <div id="fss-welcome-actions">
                 <Button iconAfter="arrow-right" height={36} onClick={goToProjectTypeSelection}>
                     Let's start

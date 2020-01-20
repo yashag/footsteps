@@ -1,12 +1,14 @@
-import {Button, Text, TextInputField} from "evergreen-ui";
+import {Button, Heading, Paragraph, Text, TextInputField} from "evergreen-ui";
 import React, {ChangeEvent, Dispatch, FormEvent, SetStateAction, useContext, useState} from "react";
 
 import {IProjectInfoContextConsumer, ProjectInfoContext} from "../../contexts/ProjectInfoContext";
-import {StepProps} from "../../types/steps/steps";
+import {StepProps, Steps} from "../../types/steps/steps";
 
 import "./basic-info-page.scss";
 
 const BasicInfoPage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
+    const goToRepositoryCreation: () => void = () => { moveToStep(Steps.REPOSITORY); };
+
     const [projectName, setProjectName]: [string, Dispatch<SetStateAction<string>>] = useState<string>("");
     const [projectCodeName, setProjectCodeName]: [string, Dispatch<SetStateAction<string>>] = useState<string>("");
     const [projectDescription, setProjectDescription]: [string, Dispatch<SetStateAction<string>>] = useState<string>("");
@@ -15,15 +17,16 @@ const BasicInfoPage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
     const handleProjectInfoSubmit: (e: FormEvent<HTMLFormElement>) => void = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         updateProjectInfo!({name: projectName, description: projectDescription, codeName: projectCodeName});
+        goToRepositoryCreation();
     };
 
     return (
         <div id="fss-basic-info-page">
             <header id="fss-basic-info-header">
-                <h1 id="fss-basic-info-title">Basic Information</h1>
-                <p id="fss-basic-info-description">
+                <Heading id="fss-basic-info-title" is="h1" size={900} marginTop="default">Basic Information</Heading>
+                <Paragraph id="fss-basic-info-description" marginTop="default">
                     First, let's fill in the basic information needed to initialize your project in the form below.
-                </p>
+                </Paragraph>
             </header>
             <form id="fss-basic-info-form" onSubmit={handleProjectInfoSubmit}>
                 <TextInputField id="fss-basic-info-form-project-name"

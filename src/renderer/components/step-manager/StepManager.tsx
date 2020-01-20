@@ -5,6 +5,7 @@ import {StepComponent, Steps, StepToComponent} from "../../types/steps/steps";
 import ProjectInfoContextProvider from "../../contexts/ProjectInfoContext";
 import BasicInfoPage from "../basic-info-page/BasicInfoPage";
 import ProjectTypePage from "../project-type-page/ProjectTypePage";
+import RepositoryPage from "../repository-page/RepositoryPage";
 import WelcomePage from "../welcome-page/WelcomePage";
 
 import "./step-manager.scss";
@@ -15,7 +16,8 @@ const StepManager: () => JSX.Element = () => {
     const stepsMap: StepToComponent = {
         [Steps.WELCOME]: WelcomePage,
         [Steps.PROJECT_TYPE]: ProjectTypePage,
-        [Steps.BASIC_INFO]: BasicInfoPage
+        [Steps.BASIC_INFO]: BasicInfoPage,
+        [Steps.REPOSITORY]: RepositoryPage
     };
 
     const currentStep: StepComponent = stepsMap[step];

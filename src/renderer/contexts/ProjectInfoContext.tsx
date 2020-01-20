@@ -14,6 +14,12 @@ export const ProjectInfoContext: Context<IProjectInfoContextConsumer> = createCo
 class ProjectInfoContextProvider extends Component<ProjectInfoContextProps, ProjectInfoContextState> {
     public state: ProjectInfoContextState = {...initialState};
 
+    constructor(props: ProjectInfoContextProps) {
+        super(props);
+
+        this.updateProjectInfo = this.updateProjectInfo.bind(this);
+    }
+
     public updateProjectInfo(updatedInfo: Partial<ProjectInfoContextState>): void {
         this.setState({...this.state, ...updatedInfo});
     }

@@ -5,7 +5,6 @@ div#fss-basic-info-page {
   grid-template-areas:
   "header"
   "form";
-  justify-content: center;
 
   height: var(--full-size);
 
@@ -23,7 +22,7 @@ div#fss-basic-info-page {
     }
 
     p#fss-basic-info-description {
-      font-size: 20px;
+      font-size: 22px;
     }
   }
 

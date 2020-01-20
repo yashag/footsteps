@@ -1,4 +1,4 @@
-import {Button, Text} from "evergreen-ui";
+import {Button, Heading, Paragraph, Text} from "evergreen-ui";
 import React from "react";
 
 import "./project-type-page.scss";
@@ -15,11 +15,11 @@ const ProjectTypePage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
     return (
         <div id="fss-page-type-page">
             <header id="fss-page-type-header">
-                <h1 id="fss-page-type-title">Select your project type</h1>
-                <p id="fss-page-type-description">
+                <Heading id="fss-page-type-title" is="h1" size={900} marginTop="default">Select your project type</Heading>
+                <Paragraph id="fss-page-type-description" marginTop="default">
                     Please note that more project types would be supported in future versions.
                     If you do not find the specific type you were looking for, you can always select the generic one.
-                </p>
+                </Paragraph>
             </header>
             <div id="fss-page-type-actions">
                 <Button id="fss-page-type-generic-button" className="fss-page-type-button" iconBefore="code" height={60}

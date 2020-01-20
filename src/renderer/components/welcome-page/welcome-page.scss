@@ -21,9 +21,9 @@ div#fss-welcome-page {
     justify-content: center;
     align-items: center;
 
-    color: var(--main-color);
-
-    h1#fss-welcome-title {}
+    h1#fss-welcome-title-text {
+      color: var(--main-color);
+    }
   }
 
   p#fss-welcome-content {
@@ -31,7 +31,8 @@ div#fss-welcome-page {
 
     padding: 0 4rem;
 
-    font-size: 20px;
+    font-size: 26px;
+    line-height: 34px;
     text-align: center;
   }
 
