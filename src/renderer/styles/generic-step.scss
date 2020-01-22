@@ -1,0 +1,23 @@
+.fss-step-page {
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+
+  height: var(--full-size);
+
+  padding: 0 4rem;
+
+  h1.fss-step-page-title {
+    color: var(--main-color);
+  }
+
+  p.fss-step-page-description {
+    --fontsize: 22px;
+    font-size: var(--fontsize);
+    line-height: calc(var(--fontsize) + 10px);
+  }
+
+  button > svg.fss-step-page-button-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}

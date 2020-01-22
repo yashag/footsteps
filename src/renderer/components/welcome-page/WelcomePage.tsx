@@ -1,7 +1,8 @@
 import {Button, Heading, Paragraph} from "evergreen-ui";
 import React from "react";
 
-import logo from "../../../../resources/footsteps.svg";
+import Logo from "../../../../resources/footsteps.svg";
+import StyleConstants from "../../styles/constants.json";
 import "./welcome-page.scss";
 
 import {StepProps, Steps} from "../../types/steps/steps";
@@ -12,7 +13,7 @@ const WelcomePage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
     return (
         <div id="fss-welcome-page">
             <div id="fss-welcome-title">
-                <img className="fss-logo" src={logo} alt="Footsteps"/>
+                <Logo className="fss-logo" fill={StyleConstants.palette.mainColor}/>
                 <Heading id="fss-welcome-title-text" is="h1" size={900}>Welcome to Footsteps!</Heading>
             </div>
             <Paragraph id="fss-welcome-content" marginTop="default">

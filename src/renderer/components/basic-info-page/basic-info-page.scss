@@ -1,29 +1,12 @@
 div#fss-basic-info-page {
-  display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 1fr 3fr;
   grid-template-areas:
   "header"
   "form";
 
-  height: var(--full-size);
-
-  padding: 0 4rem;
-
-  .fss-logo {
-    width: 3rem;
-  }
-
   header#fss-basic-info-header {
     grid-area: header;
-
-    h1#fss-basic-info-title {
-      color: var(--main-color);
-    }
-
-    p#fss-basic-info-description {
-      font-size: 22px;
-    }
   }
 
 

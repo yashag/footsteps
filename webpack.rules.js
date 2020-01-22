@@ -34,7 +34,11 @@ module.exports = [
         use: ["style-loader", "css-loader", "sass-loader"],
     },
     {
-        test: /\.(svg|ico|icns)$/,
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    },
+    {
+        test: /\.(ico|icns)$/,
         loader: "file-loader",
         options: {
             name: "[path][name].[ext]",

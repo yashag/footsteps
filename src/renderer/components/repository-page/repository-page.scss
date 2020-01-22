@@ -1,30 +1,13 @@
 div#fss-repository-page {
-  display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
   "header"
   "info"
   "actions";
 
-  height: var(--full-size);
-
-  padding: 0 4rem;
-
-  .fss-logo {
-    width: 3rem;
-  }
-
   header#fss-repository-header {
     grid-area: header;
 
-    h1#fss-repository-title {
-      color: var(--main-color);
-    }
-
-    p#fss-repository-description {
-      font-size: 22px;
-    }
   }
 
   section#fss-repository-project-info {
@@ -33,7 +16,22 @@ div#fss-repository-page {
 
   div#fss-repository-project-actions {
     grid-area: actions;
-  }
 
+    div#fss-repository-project-actions-repos {
+      display: flex;
+      flex-flow: column wrap;
+
+      button.fss-repository-project-button {
+        margin-bottom: 1rem;
+        width: 20rem;
+        padding: 0 1rem;
+
+        span.fss-repository-project-button-text {
+          display: inline-block;
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
 
 }
