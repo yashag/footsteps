@@ -1,4 +1,5 @@
 :root {
+  --background-color: #fbfbfb;
   --main-color: #69a68a;
   --light-color: #daf3eb;
   --link-color: #1DA57A;
@@ -21,7 +22,5 @@ body {
 
   div#root {
     height: var(--full-size);
-    display: flex;
-    flex-direction: column;
   }
 }

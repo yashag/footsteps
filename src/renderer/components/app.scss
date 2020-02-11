@@ -1,7 +1,15 @@
 @import "../styles/generic-step";
 
-main#fss-app {
-    flex: 1 0 auto;
+:root {
+  --footer-height: 2rem;
+}
 
-    background-color: #fbfbfb;
+main#fss-app {
+    min-height: calc(var(--full-size) - var(--footer-height));
+
+    background-color: var(--background-color);
+}
+
+footer#fss-footer {
+  position: relative;
 }

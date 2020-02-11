@@ -16,8 +16,7 @@ const RepositoryPage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
     return (
         <div id="fss-repository-page" className="fss-step-page">
             <header id="fss-repository-header">
-                <Heading id="fss-repository-title" is="h1" size={900} marginTop="default"
-                         className="fss-step-page-title">
+                <Heading id="fss-repository-title" is="h1" size={900} className="fss-step-page-title">
                     Creating a repository
                 </Heading>
                 <Paragraph id="fss-repository-description" marginTop="default" className="fss-step-page-description">

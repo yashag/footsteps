@@ -1,16 +1,16 @@
 import {hot} from "react-hot-loader/root";
 
-import React from "react";
+import React, {FunctionComponent} from "react";
 
 import Footer from "./footer/Footer";
-import StepManager from "./step-manager/StepManager";
+import StepsContainer from "./steps-manager/StepsContainer";
 
 import "./app.scss";
 
-const App: () => JSX.Element = () => (
+const App: FunctionComponent = () => (
     <>
         <main id="fss-app">
-            <StepManager />
+            <StepsContainer />
         </main>
         <Footer />
     </>

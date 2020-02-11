@@ -1,3 +1,5 @@
+import {FunctionComponent} from "react";
+
 export enum Steps {
     WELCOME,
     PROJECT_TYPE,
@@ -6,10 +8,10 @@ export enum Steps {
 }
 
 export interface StepProps {
-    moveToStep: (nextPage: Steps) => void;
+    moveToStep: (nextPage?: Steps) => void;
 }
 
-export type StepComponent = (props: StepProps) => JSX.Element;
+export type StepComponent = FunctionComponent<StepProps>;
 
 export type StepToComponent = {
     [key in Steps]: StepComponent;

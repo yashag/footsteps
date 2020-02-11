@@ -1,6 +1,6 @@
 div#fss-page-type-page {
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
   grid-template-areas:
           "header"
           "actions";
@@ -15,7 +15,9 @@ div#fss-page-type-page {
 
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+
+    min-height: 12rem;
 
     button.fss-page-type-button {
       width: 20rem;

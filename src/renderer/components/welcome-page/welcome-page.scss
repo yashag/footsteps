@@ -1,14 +1,15 @@
 div#fss-welcome-page {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fill, minmax(8rem, 1fr));
+  grid-row-gap: 0.4rem;
   grid-template-areas:
           "title title title"
           "content content content"
           "actions actions actions";
   justify-content: center;
-
-  height: var(--full-size);
+  align-content: stretch;
+  margin-top: 1rem;
 
   .fss-logo {
     width: 3rem;
@@ -24,12 +25,14 @@ div#fss-welcome-page {
 
     h1#fss-welcome-title-text {
       color: var(--main-color);
+      text-align: center;
     }
   }
 
   p#fss-welcome-content {
     grid-area: content;
 
+    margin: 0;
     padding: 0 4rem;
 
     font-size: 26px;
@@ -39,6 +42,8 @@ div#fss-welcome-page {
 
   div#fss-welcome-actions {
     grid-area: actions;
+    margin-top: 2rem;
+
     text-align: center;
   }
 }

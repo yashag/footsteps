@@ -16,7 +16,7 @@ const ProjectTypePage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
     return (
         <div id="fss-page-type-page" className="fss-step-page">
             <header id="fss-page-type-header">
-                <Heading id="fss-page-type-title" className="fss-step-page-title" is="h1" size={900} marginTop="default">Select your project type</Heading>
+                <Heading id="fss-page-type-title" className="fss-step-page-title" is="h1" size={900}>Select your project type</Heading>
                 <Paragraph id="fss-page-type-description" className="fss-step-page-description" marginTop="default">
                     Please note that more project types would be supported in future versions.
                     If you do not find the specific type you were looking for, you can always select the generic one.

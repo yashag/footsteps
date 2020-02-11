@@ -23,7 +23,7 @@ const BasicInfoPage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
     return (
         <div id="fss-basic-info-page" className="fss-step-page">
             <header id="fss-basic-info-header">
-                <Heading id="fss-basic-info-title" className="fss-step-page-title" is="h1" size={900} marginTop="default">Basic Information</Heading>
+                <Heading id="fss-basic-info-title" className="fss-step-page-title" is="h1" size={900}>Basic Information</Heading>
                 <Paragraph id="fss-basic-info-description" className="fss-step-page-description" marginTop="default">
                     First, let's fill in the basic information needed to initialize your project in the form below.
                 </Paragraph>

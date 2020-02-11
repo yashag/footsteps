@@ -1,0 +1,12 @@
+header#fss-header {
+    position: fixed;
+    top: 0;
+
+    z-index: 10;
+}
+
+div#fss-steps-container {
+    min-height: inherit;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
