@@ -42,7 +42,7 @@ class StepsContainer extends Component<{}, StepsContainerState> {
 
         return (
             <>
-                <Header moveToStep={this.moveToStep} />
+                {this.state.step ? <Header moveToStep={this.moveToStep} /> : null}
                 <div id="fss-steps-container">
                     <ProjectInfoContextProvider>
                         {currentStepComponent ? React.createElement(currentStepComponent, {moveToStep: this.moveToStep}) : null}

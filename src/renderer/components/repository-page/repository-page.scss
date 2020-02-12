@@ -3,6 +3,7 @@ div#fss-repository-page {
   grid-template-areas:
   "header"
   "info"
+  "vendors"
   "actions";
 
   header#fss-repository-header {
@@ -14,14 +15,14 @@ div#fss-repository-page {
     grid-area: info;
   }
 
-  div#fss-repository-project-actions {
-    grid-area: actions;
+  div#fss-repository-project-vendors {
+    grid-area: vendors;
 
-    div#fss-repository-project-actions-repos {
+    div#fss-repository-project-vendors-repos {
       display: flex;
       flex-flow: column wrap;
 
-      button.fss-repository-project-button {
+      a.fss-repository-project-button {
         margin-bottom: 1rem;
         width: 20rem;
         padding: 0 1rem;
@@ -32,6 +33,10 @@ div#fss-repository-page {
         }
       }
     }
+  }
+
+  div#fss-repository-project-actions {
+    margin-top: 2rem;
   }
 
 }

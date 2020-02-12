@@ -36,21 +36,24 @@ const RepositoryPage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
                     </div>
                 </Pane>
             </Pane>
-            <Pane id="fss-repository-project-actions">
-                <Pane id="fss-repository-project-actions-repos" marginTop={20}>
-                    <Button className="fss-repository-project-button" height={StyleConstants.buttonHeight}>
+            <Pane id="fss-repository-project-vendors">
+                <Pane id="fss-repository-project-vendors-repos" marginTop={20}>
+                    <Button className="fss-repository-project-button" is="a" href="https://github.com/new" height={StyleConstants.buttonHeight}>
                         <Icon icon={<GitHubIcon className="fss-step-page-button-icon" fill="#181717" />} />
                         <Text className="fss-repository-project-button-text" size={600}>GitHub</Text>
                     </Button>
-                    <Button className="fss-repository-project-button" height={StyleConstants.buttonHeight}>
+                    <Button className="fss-repository-project-button" is="a" href="https://bitbucket.org/repo/create" height={StyleConstants.buttonHeight}>
                         <Icon icon={<BitbucketIcon className="fss-step-page-button-icon" fill="#0052CC" />} />
                         <Text className="fss-repository-project-button-text" size={600}>Bitbucket</Text>
                     </Button>
-                    <Button className="fss-repository-project-button" height={StyleConstants.buttonHeight}>
+                    <Button className="fss-repository-project-button" is="a" href="https://gitlab.com/projects/new" height={StyleConstants.buttonHeight}>
                         <Icon icon={<GitLabIcon className="fss-step-page-button-icon" fill="#FCA121" />} />
                         <Text className="fss-repository-project-button-text" size={600}>GitLab</Text>
                     </Button>
                 </Pane>
+            </Pane>
+            <Pane id="fss-repository-project-actions">
+                <Button type="submit" iconAfter="arrow-right" height={36}>I'm done, let's continue</Button>
             </Pane>
         </div>
     );

@@ -18,7 +18,7 @@
     line-height: calc(var(--fontsize) + 10px);
   }
 
-  button > svg.fss-step-page-button-icon {
+  button > svg.fss-step-page-button-icon, a > svg.fss-step-page-button-icon {
     width: 1.6rem;
     height: 1.6rem;
   }
