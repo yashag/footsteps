@@ -23,6 +23,38 @@ const RepositoryPage: FunctionComponent<StepProps> = ({moveToStep}) => {
         moveToStep(Steps.CLONE);
     };
 
+    const renderTab = (tab: RepoTab, index: number) => (
+        <Pane key={index} role="tabpanel"
+              className="fss-repository-project-vendors-repo"
+              aria-labelledby={tab}
+              aria-hidden={index !== currentTab}
+              display={index === currentTab ? "block" : "none"}>
+            <Paragraph>
+                Now let's use the data above to create our new repository.
+                Press the button below to be redirected to your chosen repository hosting platform and fill in the blanks.
+                When you are done, press "create" and enjoy the birth of your new project!
+            </Paragraph>
+            <Button className="fss-repository-project-button" is="a" href={tab.newRepoLink} iconBefore="git-repo" height={StyleConstants.smallButtonHeight}>
+                <Text className="fss-repository-project-button-text" size={400}>Open {tab.name} and create a new repository</Text>
+            </Button>
+            <Paragraph marginTop={14}>
+                Now that you have created your repository, you should clone your project to a local directory.
+                Copy the clone link (HTTP or SSH) and either use the clone command in your favourite IDE or use the appropriate git command in your terminal, like so:
+                <br />
+                <Code>git clone <i>[the clone link]</i></Code>
+                <br />
+                <Pane elevation={0} background="blueTint" border="muted" padding={10} marginTop={14}>
+                    <Text className="fss-repository-project-tip" color="muted">
+                        A small tip: It is best to keep all your coding projects organized in a workspace directory. Your desktop is usually meant for other stuff ;)
+                    </Text>
+                </Pane>
+            </Paragraph>
+            <Button className="fss-repository-project-button" is="a" href={tab.cloneHelpLink} iconBefore="help" height={StyleConstants.smallButtonHeight}>
+                <Text className="fss-repository-project-button-text" size={400}>I need help with cloning the project</Text>
+            </Button>
+        </Pane>
+    );
+
     return (
         <div id="fss-repository-page" className="fss-step-page">
             <header id="fss-repository-header">
@@ -41,8 +73,7 @@ const RepositoryPage: FunctionComponent<StepProps> = ({moveToStep}) => {
                 <Pane border background="tint2" padding={20} marginTop={20}>
                     <div><Text className="fss-repository-project-info-key" size={500}>Name:</Text> {name}</div>
                     <div><Text className="fss-repository-project-info-key" size={500}>Code name:</Text> {codeName}</div>
-                    <div><Text className="fss-repository-project-info-key" size={500}>Description:</Text> {description}
-                    </div>
+                    <div><Text className="fss-repository-project-info-key" size={500}>Description:</Text> {description}</div>
                 </Pane>
             </Pane>
             <Pane id="fss-repository-project-vendors" marginTop={20}>
@@ -56,37 +87,7 @@ const RepositoryPage: FunctionComponent<StepProps> = ({moveToStep}) => {
                     ))}
                 </Tablist>
                 <Pane id="fss-repository-project-vendors-repos" background="tint1">
-                    {repositoryVendors.map((tab: RepoTab, index: number) => (
-                        <Pane key={index} role="tabpanel"
-                              className="fss-repository-project-vendors-repo"
-                              aria-labelledby={tab}
-                              aria-hidden={index !== currentTab}
-                              display={index === currentTab ? "block" : "none"}>
-                            <Paragraph>
-                                Now let's use the data above to create our new repository.
-                                Press the button below to be redirected to your chosen repository hosting platform and fill in the blanks.
-                                When you are done, press "create" and enjoy the birth of your new project!
-                            </Paragraph>
-                            <Button className="fss-repository-project-button" is="a" href={tab.newRepoLink} iconBefore="git-repo" height={StyleConstants.smallButtonHeight}>
-                                <Text className="fss-repository-project-button-text" size={400}>Open {tab.name} and create a new repository</Text>
-                            </Button>
-                            <Paragraph marginTop={14}>
-                                Now that you have created your repository, you should clone your project to a local directory.
-                                Copy the clone link (HTTP or SSH) and either use the clone command in your favourite IDE or use the appropriate git command in your terminal, like so:
-                                <br />
-                                <Code>git clone <i>[the clone link]</i></Code>
-                                <br />
-                                <Pane elevation={0} background="blueTint" border="muted" padding={10} marginTop={14}>
-                                    <Text className="fss-repository-project-tip" color="muted">
-                                        A small tip: It is best to keep all your coding projects organized in a workspace directory. Your desktop is usually meant for other stuff ;)
-                                    </Text>
-                                </Pane>
-                            </Paragraph>
-                            <Button className="fss-repository-project-button" is="a" href={tab.cloneHelpLink} iconBefore="help" height={StyleConstants.smallButtonHeight}>
-                                <Text className="fss-repository-project-button-text" size={400}>I need help with cloning the project</Text>
-                            </Button>
-                        </Pane>
-                    ))}
+                    {repositoryVendors.map(renderTab)}
                 </Pane>
             </Pane>
             <Pane id="fss-repository-project-actions">
