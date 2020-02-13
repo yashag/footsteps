@@ -1,8 +1,8 @@
 interface SvgrComponent extends React.StatelessComponent<React.SVGAttributes<SVGElement>> {}
 
 declare module "*.svg" {
-    const value: SvgrComponent;
-    export default value;
+    const content: SvgrComponent;
+    export default content;
 }
 
 declare module "*.png" {

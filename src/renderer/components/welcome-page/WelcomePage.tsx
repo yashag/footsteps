@@ -1,5 +1,5 @@
 import {Button, Heading, Paragraph} from "evergreen-ui";
-import React from "react";
+import React, {FunctionComponent} from "react";
 
 import Logo from "../../../../resources/footsteps.svg";
 import StyleConstants from "../../styles/constants.json";
@@ -7,7 +7,7 @@ import "./welcome-page.scss";
 
 import {StepProps, Steps} from "../../types/steps/steps";
 
-const WelcomePage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
+const WelcomePage: FunctionComponent<StepProps> = ({moveToStep}) => {
     const goToProjectTypeSelection: () => void = () => { moveToStep(Steps.PROJECT_TYPE); };
 
     return (

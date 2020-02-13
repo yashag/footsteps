@@ -1,0 +1,36 @@
+div#fss-page-type-page {
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-areas:
+          "header"
+          "actions";
+
+  header#fss-page-type-header {
+    grid-area: header;
+  }
+
+
+  div#fss-page-type-actions {
+    grid-area: actions;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+
+    min-height: 12rem;
+
+    button.fss-page-type-button {
+      width: 20rem;
+      padding: 0 1rem;
+
+      svg, img {
+        margin: 0;
+      }
+
+      span.fss-page-type-button-text {
+        display: inline-block;
+        margin-left: 1rem;
+      }
+    }
+  }
+}

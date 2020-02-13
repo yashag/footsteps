@@ -1,5 +1,6 @@
 {
-  "buttonHeight": 60,
+  "regularButtonHeight": 60,
+  "smallButtonHeight": 40,
   "palette": {
     "mainColor": "#69a68a"
   }

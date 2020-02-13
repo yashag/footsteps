@@ -4,7 +4,8 @@ export enum Steps {
     WELCOME,
     PROJECT_TYPE,
     BASIC_INFO,
-    REPOSITORY
+    REPOSITORY,
+    CLONE
 }
 
 export interface StepProps {

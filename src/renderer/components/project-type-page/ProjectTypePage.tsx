@@ -1,5 +1,5 @@
 import {Button, Heading, Icon, Paragraph, Text} from "evergreen-ui";
-import React from "react";
+import React, {FunctionComponent} from "react";
 
 import NodeJSIcon from "../assets/nodejs-icon.svg";
 
@@ -8,7 +8,7 @@ import {StepProps, Steps} from "../../types/steps/steps";
 import StyleConstants from "../../styles/constants.json";
 import "./project-type-page.scss";
 
-const ProjectTypePage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
+const ProjectTypePage: FunctionComponent<StepProps> = ({moveToStep}) => {
     const goToBasicInfoForm: () => void = () => {
         moveToStep(Steps.BASIC_INFO);
     };
@@ -23,11 +23,11 @@ const ProjectTypePage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
                 </Paragraph>
             </header>
             <div id="fss-page-type-actions">
-                <Button id="fss-page-type-generic-button" className="fss-page-type-button" iconBefore="code" height={StyleConstants.buttonHeight}
+                <Button id="fss-page-type-generic-button" className="fss-page-type-button" iconBefore="code" height={StyleConstants.regularButtonHeight}
                         onClick={goToBasicInfoForm}>
                     <Text className="fss-page-type-button-text" size={600}>Generic</Text>
                 </Button>
-                <Button id="fss-page-type-nodejs-button" className="fss-page-type-button" height={StyleConstants.buttonHeight} disabled>
+                <Button id="fss-page-type-nodejs-button" className="fss-page-type-button" height={StyleConstants.regularButtonHeight} disabled>
                     <Icon icon={<NodeJSIcon className="fss-step-page-button-icon" />} />
                     <Text className="fss-page-type-button-text" size={600}>Node.js</Text>
                 </Button>

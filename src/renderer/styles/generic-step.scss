@@ -18,8 +18,14 @@
     line-height: calc(var(--fontsize) + 10px);
   }
 
-  button > svg.fss-step-page-button-icon, a > svg.fss-step-page-button-icon {
+  button > svg.fss-step-page-button-icon {
     width: 1.6rem;
     height: 1.6rem;
+  }
+
+  span[role="tab"] > svg.fss-step-page-button-icon, span[role="tab"] > span > svg.fss-step-page-button-icon {
+    margin-right: 0.6rem;
+    width: 1rem;
+    height: 1rem;
   }
 }

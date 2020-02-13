@@ -17,26 +17,46 @@ div#fss-repository-page {
 
   div#fss-repository-project-vendors {
     grid-area: vendors;
+    display: flex;
+
+    & > div[role="tablist"] {
+      --tab-width: 12rem;
+      flex-basis: var(--tab-width);
+
+      span[role="tab"] {
+        width: var(--tab-width);
+
+        & > span {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
 
     div#fss-repository-project-vendors-repos {
-      display: flex;
-      flex-flow: column wrap;
+      flex: 1;
+      margin-left: 1rem;
 
-      a.fss-repository-project-button {
-        margin-bottom: 1rem;
-        width: 20rem;
-        padding: 0 1rem;
+      div[role="tabpanel"].fss-repository-project-vendors-repo {
 
-        span.fss-repository-project-button-text {
+        a.fss-repository-project-button {
+          margin-top: 0.4rem;
+        }
+
+        p > code {
           display: inline-block;
-          margin-left: 1rem;
+          margin: 0.4rem 0;
+        }
+
+        span.fss-repository-project-tip {
+          font-style: italic;
         }
       }
     }
   }
 
   div#fss-repository-project-actions {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 
 }

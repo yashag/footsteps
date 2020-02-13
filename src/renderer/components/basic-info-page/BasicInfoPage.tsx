@@ -1,12 +1,12 @@
 import {Button, Heading, Paragraph, Text, TextInputField} from "evergreen-ui";
-import React, {ChangeEvent, Dispatch, FormEvent, SetStateAction, useContext, useState} from "react";
+import React, {ChangeEvent, Dispatch, FormEvent, FunctionComponent, SetStateAction, useContext, useState} from "react";
 
 import {IProjectInfoContextConsumer, ProjectInfoContext} from "../../contexts/ProjectInfoContext";
 import {StepProps, Steps} from "../../types/steps/steps";
 
 import "./basic-info-page.scss";
 
-const BasicInfoPage: (props: StepProps) => JSX.Element = ({moveToStep}) => {
+const BasicInfoPage: FunctionComponent<StepProps> = ({moveToStep}) => {
     const goToRepositoryCreation: () => void = () => { moveToStep(Steps.REPOSITORY); };
 
     const [projectName, setProjectName]: [string, Dispatch<SetStateAction<string>>] = useState<string>("");
