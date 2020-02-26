@@ -1,0 +1,43 @@
+div#fss-readme-page {
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-areas: "header" "separator" "instructions";
+
+  header#fss-readme-header {
+    grid-area: header;
+  }
+
+  div.fss-step-page-separator {
+    grid-area: separator;
+  }
+
+  div#fss-readme-instructions {
+    grid-area: instructions;
+
+    margin-top: 0.6rem;
+
+    p#fss-readme-instructions-text {
+      margin-bottom: 1rem;
+    }
+
+    div#fss-readme-instructions-list {
+
+      div.big-first-col {
+        div.fss-table-header:first-child, div.fss-table-cell:first-child {
+          flex-grow: 2;
+        }
+      }
+
+      div.large-first-col {
+        div.fss-table-header:first-child, div.fss-table-cell:first-child {
+          flex-grow: 3;
+        }
+      }
+
+      p.markdown-text {
+        padding: 0.4rem 0;
+        white-space: pre-wrap;
+      }
+    }
+  }
+}

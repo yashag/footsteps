@@ -16,6 +16,7 @@
     --fontsize: 22px;
     font-size: var(--fontsize);
     line-height: calc(var(--fontsize) + 10px);
+    text-align: justify;
   }
 
   button > svg.fss-step-page-button-icon {
@@ -27,5 +28,13 @@
     margin-right: 0.6rem;
     width: 1rem;
     height: 1rem;
+  }
+
+  div.fss-step-page-separator {
+    height: 2px;
+    width: var(--full-size);
+    margin: 1rem 0;
+
+    background-color: #ebecec;
   }
 }

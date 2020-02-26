@@ -1,8 +1,8 @@
 import {Steps, StepToComponent} from "../../types/steps/steps";
 
 import BasicInfoPage from "../../components/basic-info-page/BasicInfoPage";
-import ClonePage from "../../components/clone-page/ClonePage";
 import ProjectTypePage from "../../components/project-type-page/ProjectTypePage";
+import ReadmePage from "../../components/readme-page/ReadmePage";
 import RepositoryPage from "../../components/repository-page/RepositoryPage";
 import WelcomePage from "../../components/welcome-page/WelcomePage";
 
@@ -11,7 +11,7 @@ const STEPS_MAPPING: StepToComponent = {
     [Steps.PROJECT_TYPE]: ProjectTypePage,
     [Steps.BASIC_INFO]: BasicInfoPage,
     [Steps.REPOSITORY]: RepositoryPage,
-    [Steps.CLONE]: ClonePage
+    [Steps.README]: ReadmePage
 };
 
 export default STEPS_MAPPING;

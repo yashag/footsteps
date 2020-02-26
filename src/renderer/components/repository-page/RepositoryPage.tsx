@@ -20,7 +20,7 @@ const RepositoryPage: FunctionComponent<StepProps> = ({moveToStep}) => {
     const [currentTab, setCurrentTab]: [number, Dispatch<SetStateAction<number>>] = useState<number>(0);
 
     const goToCloneAndOpen: () => void = () => {
-        moveToStep(Steps.CLONE);
+        moveToStep(Steps.README);
     };
 
     const renderTab = (tab: RepoTab, index: number) => (
