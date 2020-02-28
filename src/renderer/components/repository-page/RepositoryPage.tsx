@@ -1,8 +1,8 @@
-import {Button, Code, Heading, Icon, Pane, Paragraph, SidebarTab, Tablist, Text} from "evergreen-ui";
-import React, {Dispatch, FunctionComponent, SetStateAction, useContext, useState} from "react";
+import { Button, Code, Heading, Icon, Pane, Paragraph, SidebarTab, Tablist, Text } from "evergreen-ui";
+import React, { Dispatch, FunctionComponent, SetStateAction, useContext, useState } from "react";
 
-import {IProjectInfoContextConsumer, ProjectInfoContext} from "../../contexts/ProjectInfoContext";
-import {StepProps, Steps} from "../../types/steps/steps";
+import { IProjectInfoContextConsumer, ProjectInfoContext } from "../../contexts/ProjectInfoContext";
+import { StepProps, Steps } from "../../types/steps/steps";
 import repositoryVendors from "./repository-vendors";
 
 import StyleConstants from "../../styles/constants.json";
@@ -15,8 +15,8 @@ interface RepoTab {
     cloneHelpLink: string;
 }
 
-const RepositoryPage: FunctionComponent<StepProps> = ({moveToStep}) => {
-    const {name, codeName, description} = useContext<IProjectInfoContextConsumer>(ProjectInfoContext);
+const RepositoryPage: FunctionComponent<StepProps> = ({ moveToStep }) => {
+    const { name, codeName, description } = useContext<IProjectInfoContextConsumer>(ProjectInfoContext);
     const [currentTab, setCurrentTab]: [number, Dispatch<SetStateAction<number>>] = useState<number>(0);
 
     const goToCloneAndOpen: () => void = () => {
@@ -25,10 +25,10 @@ const RepositoryPage: FunctionComponent<StepProps> = ({moveToStep}) => {
 
     const renderTab = (tab: RepoTab, index: number) => (
         <Pane key={index} role="tabpanel"
-              className="fss-repository-project-vendors-repo"
-              aria-labelledby={tab}
-              aria-hidden={index !== currentTab}
-              display={index === currentTab ? "block" : "none"}>
+            className="fss-repository-project-vendors-repo"
+            aria-labelledby={tab}
+            aria-hidden={index !== currentTab}
+            display={index === currentTab ? "block" : "none"}>
             <Paragraph>
                 Now let's use the data above to create our new repository.
                 Press the button below to be redirected to your chosen repository hosting platform and fill in the blanks.
@@ -42,13 +42,12 @@ const RepositoryPage: FunctionComponent<StepProps> = ({moveToStep}) => {
                 Copy the clone link (HTTP or SSH) and either use the clone command in your favourite IDE or use the appropriate git command in your terminal, like so:
                 <br />
                 <Code>git clone <i>[the clone link]</i></Code>
-                <br />
-                <Pane elevation={0} background="blueTint" border="muted" padding={10} marginTop={14}>
-                    <Text className="fss-repository-project-tip" color="muted">
-                        A small tip: It is best to keep all your coding projects organized in a workspace directory. Your desktop is usually meant for other stuff ;)
-                    </Text>
-                </Pane>
             </Paragraph>
+            <Pane elevation={0} background="blueTint" border="muted" padding={10} marginTop={14}>
+                <Text className="fss-repository-project-tip" color="muted">
+                    A small tip: It is best to keep all your coding projects organized in a workspace directory. Your desktop is usually meant for other stuff ;)
+                    </Text>
+            </Pane>
             <Button className="fss-repository-project-button" is="a" href={tab.cloneHelpLink} iconBefore="help" height={StyleConstants.smallButtonHeight}>
                 <Text className="fss-repository-project-button-text" size={400}>I need help with cloning the project</Text>
             </Button>
@@ -63,9 +62,9 @@ const RepositoryPage: FunctionComponent<StepProps> = ({moveToStep}) => {
                 </Heading>
                 <Paragraph id="fss-repository-description" marginTop="default" className="fss-step-page-description">
                     When creating a repository online, most of the platforms give you a head start by generating some
-                    initial files (for instance: <Code>.gitignore</Code> and <Code>LICENSE</Code> files).<br/>
+                    initial files (for instance: <Code>.gitignore</Code> and <Code>LICENSE</Code> files).<br />
                     So why shouldn't we take advantage of it? This saves us the hassle of
-                    initializing a local git repo, generating those files and pushing them to origin.<br/>
+                    initializing a local git repo, generating those files and pushing them to origin.<br />
                     So let's start by choosing your preferred repository hosting service.
                 </Paragraph>
             </header>
@@ -80,8 +79,8 @@ const RepositoryPage: FunctionComponent<StepProps> = ({moveToStep}) => {
                 <Tablist>
                     {repositoryVendors.map((tab: RepoTab, index: number) => (
                         <SidebarTab key={index} onSelect={() => setCurrentTab(index)} isSelected={currentTab === index}
-                             aria-controls={`panel-${index}`}>
-                            <Icon icon={tab.icon}/>
+                            aria-controls={`panel-${index}`}>
+                            <Icon icon={tab.icon} />
                             <Text className="fss-repository-project-button-text" size={400}>{tab.name}</Text>
                         </SidebarTab>
                     ))}

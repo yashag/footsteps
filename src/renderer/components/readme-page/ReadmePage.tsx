@@ -1,4 +1,4 @@
-import {Heading, ListItem, Pane, Paragraph, Strong} from "evergreen-ui";
+import {Heading, Pane, Paragraph, Strong} from "evergreen-ui";
 import React, {FunctionComponent} from "react";
 
 import {StepProps, Steps} from "../../types/steps/steps";

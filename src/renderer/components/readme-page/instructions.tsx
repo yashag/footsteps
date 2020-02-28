@@ -1,4 +1,4 @@
-import {ListItem, UnorderedList } from "evergreen-ui";
+import {ListItem } from "evergreen-ui";
 import React from "react";
 import MarkdownExample from "./MarkdownExample";
 import Instruction from "./Instruction";
@@ -96,11 +96,9 @@ npm install foobar
 const UsageInstruction = <Instruction title="Usage"
     content={<>
         State all the ways your project could be used. Here are several suggestions:
-        <UnorderedList>
-            <ListItem>Requiring the file at the top and calling a function/constructor</ListItem>
-            <ListItem>Using CLI commands</ListItem>
-            <ListItem>Running the project and calling and endpoint</ListItem>
-        </UnorderedList>
+        <ListItem>Requiring the file at the top and calling a function/constructor</ListItem>
+        <ListItem>Using CLI commands</ListItem>
+        <ListItem>Running the project and calling and endpoint</ListItem>
         Obviously those are just suggestions. There might be a lot more ways to use your project.
         Make sure you explain them <strong>all</strong> clearly, so your users would be able to to setup quickly and easily.
         Also make sure you do not miss any important steps. If there are any extra steps or prerequisites to run your project, describe them in detail.
@@ -223,7 +221,7 @@ I would like to thank all our amazing collaborators for giving their hand in mak
 const SponsorshipInstruction = <Instruction title="Sponsors/Backers" content="Coming soon" />;
 
 
-const LicenseInstruction = <Instruction title="Authors/Credits/Collaborators and acknowledgments"
+const LicenseInstruction = <Instruction title="License"
     content={<>
         We will touch on licenses later on, but it is a common practice to attach them you your Readme, either as a link or as copy pasted text.
     </>}
@@ -279,4 +277,4 @@ export default [
     SponsorshipInstruction,
     LicenseInstruction,
     StatusInstruction
-];
+].map(instr => ({...instr, key: instr.props.title}));

@@ -1,5 +1,5 @@
-import React, { FunctionComponent, ReactNode } from "react";
-import { Pane, Heading, Paragraph, Table } from "evergreen-ui";
+import React, { FunctionComponent } from "react";
+import { Paragraph, Table } from "evergreen-ui";
 import Markdown from "markdown-to-jsx";
 
 interface IMarkdownExampleProps {
@@ -14,16 +14,16 @@ const MarkdownExample: FunctionComponent<IMarkdownExampleProps> = ({ data, optio
 
     return <Table marginTop={20} border className={options?.classes || ""}>
         <Table.Head height={50}>
-            {headers.map((header: string) => (
-                <Table.HeaderCell className="fss-table-header">{header}</Table.HeaderCell>
+            {headers.map((header: string, headerIndex: number) => (
+                <Table.HeaderCell key={headerIndex} className="fss-table-header">{header}</Table.HeaderCell>
             ))}
         </Table.Head>
         <Table.Body>
-            {rows.map((row: string[]) => {
+            {rows.map((row: string[], rowIndex: number) => {
                 return (
-                    <Table.Row height="auto">
-                        {row.map((cell: string) => (
-                            <Table.Cell className="fss-table-cell">
+                    <Table.Row key={rowIndex} height="auto">
+                        {row.map((cell: string, cellIndex: number) => (
+                            <Table.Cell key={cellIndex} className="fss-table-cell">
                                 <Paragraph className="markdown-text" size={500} color="dark" fontFamily='mono'>{cell}</Paragraph>
                             </Table.Cell>
                         ))}

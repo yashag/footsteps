@@ -24,7 +24,7 @@ class ProjectInfoContextProvider extends Component<ProjectInfoContextProps, Proj
         this.setState({...this.state, ...updatedInfo});
     }
 
-    public render(): JSX.Element {
+    public render(): React.ReactNode {
         return (
             <ProjectInfoContext.Provider value={{...this.state, updateProjectInfo: this.updateProjectInfo}}>
                 {this.props.children}
