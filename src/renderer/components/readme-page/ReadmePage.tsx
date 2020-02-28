@@ -2,7 +2,7 @@ import {Heading, ListItem, Pane, Paragraph, Strong} from "evergreen-ui";
 import React, {FunctionComponent} from "react";
 
 import {StepProps, Steps} from "../../types/steps/steps";
-import instructions from "./instructions";
+import instructions from "./Instructions";
 import "./readme-page.scss";
 
 const ReadmePage: FunctionComponent<StepProps> = ({moveToStep}) => {
