@@ -1,6 +1,6 @@
-import {ListItem } from "evergreen-ui";
+import { ListItem } from "evergreen-ui";
 import React from "react";
-import MarkdownExample from "./MarkdownExample";
+import MarkdownExample, { MARKDOWN_CELL_SIZE } from "./MarkdownExample";
 import Instruction from "./Instruction";
 
 
@@ -14,8 +14,8 @@ const TitleInstruction = <Instruction title="Title"
     </>}
 >
     <MarkdownExample
+        columns={[{ header: "Markdown - Option #1" }, { header: "Markdown - Option #2" }, { header: "Rendered result" }]}
         data={[
-            ["Markdown - Option #1", "Markdown - Option #2", "Rendered result"],
             [`# FootSteps`,
                 `Footsteps
 ==========`]
@@ -41,7 +41,7 @@ const DescriptionInstruction = <Instruction title="Description"
 
 const BadgesInstruction = <Instruction title="Badges"
     content={<>
-        You might have seen badges before, if you have had the chance to look at a Readme of a large project.
+        You might have seen badges before, if you have had the chance to look at a README of a large project.
         Badges are essentially a customized label, which emphasizes a certain achievement/state of your project.
         Through badges you can show the number of downloads, code coverage, license, version of your project and
         much more. They may also serve as links to external content.
@@ -49,16 +49,13 @@ const BadgesInstruction = <Instruction title="Badges"
     </>}
 >
     <MarkdownExample
+        columns={[{ header: "Markdown", size: MARKDOWN_CELL_SIZE.LARGE }, { header: "Rendered result" }]}
         data={[
-            ["Markdown", "Rendered result"],
             [`[![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)`],
             [`[![Coverage](https://img.shields.io/badge/mood-weird-blue.svg)](https://shields.io/)`],
             [`[![GitHub license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/yashag/footsteps/blob/master/LICENSE)`],
             [`[![Github all releases](https://img.shields.io/github/downloads/Naereen/StrapDown.js/total.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)`]
         ]}
-        options={{
-            classes: ["large-first-col"]
-        }}
     />
 </Instruction>;
 
@@ -79,8 +76,8 @@ const InstallationInstruction = <Instruction title="Installation"
     </>}
 >
     <MarkdownExample
+        columns={[{ header: "Markdown" }, { header: "Rendered results" }]}
         data={[
-            ["Markdown", "Rendered results"],
             [`## Installation
 
 You can install the package with either npm or yarn.
@@ -106,8 +103,8 @@ const UsageInstruction = <Instruction title="Usage"
     </>}
 >
     <MarkdownExample
+        columns={[{ header: "Markdown" }, { header: "Rendered Results" }]}
         data={[
-            ["Markdown", "Rendered Results"],
             [`## Usage
 
 You can either require and use the code programmatically:
@@ -136,8 +133,8 @@ const SupportInstruction = <Instruction title="Support/Bugs/Issues"
     </>}
 >
     <MarkdownExample
+        columns={[{ header: "Markdown", size: MARKDOWN_CELL_SIZE.BIG }, { header: "Rendered Results" }]}
         data={[
-            ["Markdown", "Rendered Results"],
             [`## Support
 
 Tested in Chrome 74-75, Firefox 66-67, IE 11, Edge 18, Safari 11-12, & Node.js 8-12.
@@ -154,9 +151,6 @@ If not, please open an issue following our issues guidelines
 
 [Gitter/Spectrum chat](https://spectrum.chat/footsteps)`]
         ]}
-        options={{
-            classes: ["big-first-col"]
-        }}
     />
 </Instruction>;
 
@@ -167,8 +161,8 @@ const FutureInstruction = <Instruction title="Roadmap/Future plans"
     </>}
 >
     <MarkdownExample
+        columns={[{ header: "Markdown" }, { header: "Rendered Results" }]}
         data={[
-            ["Markdown", "Rendered Results"],
             [`## Roadmap
 
 In future versions we plan to add:
@@ -189,8 +183,8 @@ const ContributingInstruction = <Instruction title="Contributing"
     </>}
 >
     <MarkdownExample
+        columns={[{ header: "Markdown" }, { header: "Rendered Results" }]}
         data={[
-            ["Markdown", "Rendered Results"],
             [`## Contributing
 
 You are welcome to push pull requests to our project, but please make sure you are following the contribution guidelines.
@@ -206,8 +200,8 @@ const AcknowledgmentsInstruction = <Instruction title="Authors/Credits/Collabora
     </>}
 >
     <MarkdownExample
+        columns={[{ header: "Markdown" }, { header: "Rendered Results" }]}
         data={[
-            ["Markdown", "Rendered Results"],
             [`## Acknowledgments
 
 I would like to thank all our amazing collaborators for giving their hand in making this an awesome project:
@@ -223,12 +217,12 @@ const SponsorshipInstruction = <Instruction title="Sponsors/Backers" content="Co
 
 const LicenseInstruction = <Instruction title="License"
     content={<>
-        We will touch on licenses later on, but it is a common practice to attach them you your Readme, either as a link or as copy pasted text.
+        We will touch on licenses later on, but it is a common practice to attach them to your README, either as a link or as copy pasted text.
     </>}
 >
     <MarkdownExample
+        columns={[{ header: "Markdown" }, { header: "Rendered Results" }]}
         data={[
-            ["Markdown", "Rendered Results"],
             [`## License
             
 [MIT](https://choosealicense.com/licenses/mit/)`],
@@ -253,8 +247,8 @@ const StatusInstruction = <Instruction title="Project Status"
     </>}
 >
     <MarkdownExample
+        columns={[{ header: "Markdown" }, { header: "Rendered Results" }]}
         data={[
-            ["Markdown", "Rendered Results"],
             [`## Project Status
 
 Please note this is project was created for educational purposes, hence it will no longer be supported.
@@ -277,4 +271,4 @@ export default [
     SponsorshipInstruction,
     LicenseInstruction,
     StatusInstruction
-].map(instr => ({...instr, key: instr.props.title}));
+].map(instr => ({ ...instr, key: instr.props.title }));
