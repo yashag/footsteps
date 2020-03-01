@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
-import { Paragraph, Table } from "evergreen-ui";
+import { Table } from "evergreen-ui";
 import Markdown from "markdown-to-jsx";
-import { FSSTableCell, FSSTableHeaderCell, FSSMarkdownText } from "./readme-page.styles";
+import { InstructionExampleCell, InstructionExampleHeaderCell, InstructionExampleMarkdownText } from "./readme-page.styles";
 
 export enum MARKDOWN_CELL_SIZE {
     NORMAL = 1,
@@ -27,7 +27,7 @@ const MarkdownExample: FunctionComponent<IMarkdownExampleProps> = ({ columns, da
             {columns.map((column: IColumn, headerIndex: number) => {
                 const {header, ...headerOptions} = column;
                 return (
-                    <FSSTableHeaderCell key={headerIndex} {...headerOptions}>{header}</FSSTableHeaderCell>
+                    <InstructionExampleHeaderCell key={headerIndex} {...headerOptions}>{header}</InstructionExampleHeaderCell>
                 );
             })}
         </Table.Head>
@@ -36,9 +36,9 @@ const MarkdownExample: FunctionComponent<IMarkdownExampleProps> = ({ columns, da
                 return (
                     <Table.Row key={rowIndex} height="auto">
                         {row.map((cell: string, cellIndex: number) => (
-                            <FSSTableCell key={cellIndex} size={columns[cellIndex].size}>
-                                <FSSMarkdownText size={500} color="dark" fontFamily='mono'>{cell}</FSSMarkdownText>
-                            </FSSTableCell>
+                            <InstructionExampleCell key={cellIndex} size={columns[cellIndex].size}>
+                                <InstructionExampleMarkdownText>{cell}</InstructionExampleMarkdownText>
+                            </InstructionExampleCell>
                         ))}
                         <Table.Cell>
                             <Markdown children={row[0]} />

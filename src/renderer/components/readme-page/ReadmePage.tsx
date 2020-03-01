@@ -1,9 +1,10 @@
 import { Pane, Paragraph, Strong } from "evergreen-ui";
 import React, { FunctionComponent } from "react";
 
+import StyleConstants from "../../styles/constants";
 import { StepProps, Steps } from "../../types/steps/steps";
 import instructions from "./readme-instructions";
-import { FSSReadmeInstructions, ReadmeStepPage, ReadmeStepPageHeader, ReadmePageSeparator } from "./readme-page.styles";
+import { ReadmeInstructions, ReadmeStepPage, ReadmeStepPageHeader, ReadmePageSeparator } from "./readme-page.styles";
 import { StepPageTitle, StepPageDescription } from "../../styles/generic-step.styles";
 
 const ReadmePage: FunctionComponent<StepProps> = ({ moveToStep }) => {
@@ -27,15 +28,15 @@ const ReadmePage: FunctionComponent<StepProps> = ({ moveToStep }) => {
                 </StepPageDescription>
             </ReadmeStepPageHeader>
             <ReadmePageSeparator />
-            <FSSReadmeInstructions>
-                <Paragraph id="fss-readme-instructions-text" size={500}>
+            <ReadmeInstructions>
+                <Paragraph id="fss-readme-instructions-text" size={StyleConstants.text.size.normal}>
                     Let's break it apart then. A good structure to follow would look something like this
                     (Obviously this is not set in stone, and making your own personal adjustments is always welcomed):
                 </Paragraph>
                 <Pane id="fss-readme-instructions-list" marginTop="default">
                     {instructions}
                 </Pane>
-            </FSSReadmeInstructions>
+            </ReadmeInstructions>
         </ReadmeStepPage>
     );
 };

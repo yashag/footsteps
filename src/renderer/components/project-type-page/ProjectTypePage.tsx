@@ -5,7 +5,7 @@ import NodeJSIcon from "../assets/nodejs-icon.svg";
 
 import {StepProps, Steps} from "../../types/steps/steps";
 
-import StyleConstants from "../../styles/constants.json";
+import StyleConstants from "../../styles/constants";
 import "./project-type-page.scss";
 
 const ProjectTypePage: FunctionComponent<StepProps> = ({moveToStep}) => {
@@ -23,11 +23,11 @@ const ProjectTypePage: FunctionComponent<StepProps> = ({moveToStep}) => {
                 </Paragraph>
             </header>
             <div id="fss-page-type-actions">
-                <Button id="fss-page-type-generic-button" className="fss-page-type-button" iconBefore="code" height={StyleConstants.regularButtonHeight}
+                <Button id="fss-page-type-generic-button" className="fss-page-type-button" iconBefore="code" height={StyleConstants.button.sizes.height.normal}
                         onClick={goToBasicInfoForm}>
                     <Text className="fss-page-type-button-text" size={600}>Generic</Text>
                 </Button>
-                <Button id="fss-page-type-nodejs-button" className="fss-page-type-button" height={StyleConstants.regularButtonHeight} disabled>
+                <Button id="fss-page-type-nodejs-button" className="fss-page-type-button" height={StyleConstants.button.sizes.height.normal} disabled>
                     <Icon icon={<NodeJSIcon className="fss-step-page-button-icon" />} />
                     <Text className="fss-page-type-button-text" size={600}>Node.js</Text>
                 </Button>

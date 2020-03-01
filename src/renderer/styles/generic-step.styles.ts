@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Heading, Paragraph, Button, SidebarTab } from "evergreen-ui";
+import { Heading, Paragraph, Button, Code, SidebarTab } from "evergreen-ui";
 
-import StyleConstants from "./constants.json";
+import StyleConstants from "./constants";
 
 export const StepPage = styled.div`
   display: grid;
@@ -45,6 +45,19 @@ export const StepPageTab = styled(SidebarTab)`
     width: ${tabIconSize}rem;
     height: ${tabIconSize}rem;
   }
+
+  &:hover {
+    background-color: ${StyleConstants.palette.lightColor};
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline-color: ${StyleConstants.palette.lightColor}
+  }
+
+  &[aria-selected=true] {
+    background-color: ${StyleConstants.palette.mediumColor};
+  }
 `;
 
 export const StepPageSeparator = styled.div`
@@ -53,4 +66,9 @@ export const StepPageSeparator = styled.div`
   margin: 1rem 0;
 
   background-color: #ebecec;
+`;
+
+export const StepPageCodeSample = styled(Code)`
+  display: inline-block;
+  margin: 0.4rem 0;
 `;

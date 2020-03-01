@@ -2,7 +2,7 @@ import {Button, Heading, Paragraph} from "evergreen-ui";
 import React, {FunctionComponent} from "react";
 
 import Logo from "../../../../resources/footsteps.svg";
-import StyleConstants from "../../styles/constants.json";
+import StyleConstants from "../../styles/constants";
 import "./welcome-page.scss";
 
 import {StepProps, Steps} from "../../types/steps/steps";

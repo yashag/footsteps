@@ -20,25 +20,29 @@ export const ReadmePageSeparator = styled(StepPageSeparator)`
 `;
 
 /* Readme Instructions */
-export const FSSReadmeInstructions = styled(Pane)`
+export const ReadmeInstructions = styled(Pane)`
     grid-area: instructions;
     margin-top: 0.6rem;
 `;
 
-/* Table cells */
+/* Instruction example table cells */
 type CELL_SIZE = { size?: MARKDOWN_CELL_SIZE };
 const cellFlexGrow = css<CELL_SIZE>`
     flex-grow: ${({ size }) => size ?? MARKDOWN_CELL_SIZE.NORMAL}
 `;
-export const FSSTableHeaderCell = styled(Table.HeaderCell) <CELL_SIZE>`
+export const InstructionExampleHeaderCell = styled(Table.HeaderCell) <CELL_SIZE>`
     ${cellFlexGrow}
 `;
-export const FSSTableCell = styled(Table.Cell) <CELL_SIZE>`
+export const InstructionExampleCell = styled(Table.Cell) <CELL_SIZE>`
     ${cellFlexGrow}
 `;
 
-/* Markdown */
-export const FSSMarkdownText = styled(Paragraph)`
+/* Instruction example markdown */
+export const InstructionExampleMarkdownText = styled(Paragraph).attrs({
+    size: 500,
+    color: "dark",
+    fontFamily:'mono'
+})`
     padding: 0.4rem 0;
     white-space: pre-wrap;
 `;

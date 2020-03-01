@@ -1,14 +1,14 @@
 import {BackButton, Pane} from "evergreen-ui";
 import React, { FunctionComponent } from "react";
 
-import StyleConstants from "../../styles/constants.json";
+import StyleConstants from "../../styles/constants";
 import {StepProps} from "../../types/steps/steps";
 
 import "./header.scss";
 
 const Header: FunctionComponent<StepProps> = ({moveToStep}) => (
     <Pane is="header" id="fss-header" background="tint2" border>
-        <BackButton id="fss-header-back-button" height={40} onClick={() => moveToStep()} />
+        <BackButton id="fss-header-back-button" height={StyleConstants.button.sizes.height.small} onClick={() => moveToStep()} />
     </Pane>
 );
 
