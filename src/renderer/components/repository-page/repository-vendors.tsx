@@ -4,7 +4,14 @@ import BitbucketIcon from "../assets/bitbucket-icon.svg";
 import GitHubIcon from "../assets/github-icon.svg";
 import GitLabIcon from "../assets/gitlab-icon.svg";
 
-export default [{
+export interface IRepositoryVendorInfo {
+    name: string;
+    newRepoLink: string;
+    icon: JSX.Element;
+    cloneHelpLink: string;
+}
+
+export const repositoryVendors: IRepositoryVendorInfo[] = [{
     name: "GitHub",
     newRepoLink: "https://github.com/new",
     icon: <GitHubIcon className="fss-step-page-button-icon" fill="#181717"/>,

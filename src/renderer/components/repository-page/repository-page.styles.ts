@@ -49,6 +49,12 @@ export const VendorsDetailsContainer = styled(Pane).attrs({
   margin-left: ${StyleConstants.spacing.small};
 `;
 
+export const VendorDetailsTabPanel = styled(Pane).attrs({
+  role: "tabpanel"
+})`
+  display: ${props => props.active ? "block": "none"}
+`;
+
 export const VendorLinkButton = styled(Button).attrs({
   is: "a"
 })`

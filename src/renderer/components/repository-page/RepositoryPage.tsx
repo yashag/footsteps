@@ -1,20 +1,15 @@
-import { Button, Code, Icon, Pane, Paragraph, Text, SidebarTab } from "evergreen-ui";
+import { Button, Code, Icon, Pane, Text } from "evergreen-ui";
 import React, { Dispatch, FunctionComponent, SetStateAction, useContext, useState } from "react";
 
 import { IProjectInfoContextConsumer, ProjectInfoContext } from "../../contexts/ProjectInfoContext";
 import { StepProps, Steps } from "../../types/steps/steps";
-import repositoryVendors from "./repository-vendors";
+import {repositoryVendors, IRepositoryVendorInfo} from "./repository-vendors";
+import VendorTabPanel from './VendorTabPanel';
 
 import StyleConstants from "../../styles/constants";
-import { StepPageTitle, StepPageDescription, StepPageCodeSample } from "../../styles/generic-step.styles";
-import { RespositoryStepPageHeader, ProjectInfo, ProjectVendors, VendorsTablist, VendorTab, VendorsDetailsContainer, VendorLinkButton, ProjectTip, ActionsPanel, RepositoryStepPage } from "./repository-page.styles";
+import { StepPageTitle, StepPageDescription } from "../../styles/generic-step.styles";
+import { RespositoryStepPageHeader, ProjectInfo, ProjectVendors, VendorsTablist, VendorTab, VendorsDetailsContainer, ActionsPanel, RepositoryStepPage } from "./repository-page.styles";
 
-interface RepoTab {
-    name: string;
-    newRepoLink: string;
-    icon: JSX.Element;
-    cloneHelpLink: string;
-}
 
 const RepositoryPage: FunctionComponent<StepProps> = ({ moveToStep }) => {
     const { name, codeName, description } = useContext<IProjectInfoContextConsumer>(ProjectInfoContext);
@@ -23,37 +18,6 @@ const RepositoryPage: FunctionComponent<StepProps> = ({ moveToStep }) => {
     const goToCloneAndOpen: () => void = () => {
         moveToStep(Steps.README);
     };
-
-    const renderTabPanel = (tab: RepoTab, index: number) => (
-        <Pane key={index} role="tabpanel"
-            className="fss-repository-project-vendors-repo"
-            aria-labelledby={tab}
-            aria-hidden={index !== currentTab}
-            display={index === currentTab ? "block" : "none"}>
-            <Paragraph>
-                Now let's use the data above to create our new repository.
-                Press the button below to be redirected to your chosen repository hosting platform and fill in the blanks.
-                When you are done, press "create" and enjoy the birth of your new project!
-            </Paragraph>
-            <VendorLinkButton href={tab.newRepoLink} iconBefore="git-repo">
-                <Text size={StyleConstants.button.sizes.text}>Open {tab.name} and create a new repository</Text>
-            </VendorLinkButton>
-            <Paragraph marginTop={14}>
-                Now that you have created your repository, you should clone your project to a local directory.
-                Copy the clone link (HTTP or SSH) and either use the clone command in your favourite IDE or use the appropriate git command in your terminal, like so:
-                <br />
-                <StepPageCodeSample>git clone <i>[the clone link]</i></StepPageCodeSample>
-            </Paragraph>
-            <Pane elevation={0} background="blueTint" border="muted" padding={10} marginTop={14}>
-                <ProjectTip>
-                    A small tip: It is best to keep all your coding projects organized in a workspace directory. Your desktop is usually meant for other stuff ;)
-                </ProjectTip>
-            </Pane>
-            <VendorLinkButton href={tab.cloneHelpLink} iconBefore="help">
-                <Text size={StyleConstants.button.sizes.text}>I need help with cloning the project</Text>
-            </VendorLinkButton>
-        </Pane>
-    );
 
     return (
         <RepositoryStepPage>
@@ -76,7 +40,7 @@ const RepositoryPage: FunctionComponent<StepProps> = ({ moveToStep }) => {
             </ProjectInfo>
             <ProjectVendors>
                 <VendorsTablist>
-                    {repositoryVendors.map((tab: RepoTab, index: number) => (
+                    {repositoryVendors.map((tab: IRepositoryVendorInfo, index: number) => (
                         <VendorTab key={index} onSelect={() => setCurrentTab(index)} isSelected={currentTab === index} aria-controls={`panel-${index}`}>
                             <Icon icon={tab.icon} />
                             <Text size={StyleConstants.button.sizes.text}>{tab.name}</Text>
@@ -84,7 +48,9 @@ const RepositoryPage: FunctionComponent<StepProps> = ({ moveToStep }) => {
                     ))}
                 </VendorsTablist>
                 <VendorsDetailsContainer>
-                    {repositoryVendors.map(renderTabPanel)}
+                    {repositoryVendors.map((tab: IRepositoryVendorInfo, index: number) => (
+                        <VendorTabPanel key={index} tab={tab} active={index === currentTab} />
+                    ))}
                 </VendorsDetailsContainer>
             </ProjectVendors>
             <ActionsPanel>
