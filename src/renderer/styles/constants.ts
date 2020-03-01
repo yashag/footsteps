@@ -1,11 +1,14 @@
 export default {
   button: {
     sizes: {
-      height: {
-        small: 40,
-        normal: 60
+      small: {
+        height: 40,
+        text: 400 as const
       },
-      text: 400 as const
+      normal: {
+        height: 60,
+        text: 600 as const
+      }
     }
   },
   text: {

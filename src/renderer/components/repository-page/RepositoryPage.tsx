@@ -43,7 +43,7 @@ const RepositoryPage: FunctionComponent<StepProps> = ({ moveToStep }) => {
                     {repositoryVendors.map((tab: IRepositoryVendorInfo, index: number) => (
                         <VendorTab key={index} onSelect={() => setCurrentTab(index)} isSelected={currentTab === index} aria-controls={`panel-${index}`}>
                             <Icon icon={tab.icon} />
-                            <Text size={StyleConstants.button.sizes.text}>{tab.name}</Text>
+                            <Text size={StyleConstants.button.sizes.small.text}>{tab.name}</Text>
                         </VendorTab>
                     ))}
                 </VendorsTablist>
@@ -54,7 +54,7 @@ const RepositoryPage: FunctionComponent<StepProps> = ({ moveToStep }) => {
                 </VendorsDetailsContainer>
             </ProjectVendors>
             <ActionsPanel>
-                <Button type="submit" iconAfter="arrow-right" height={StyleConstants.button.sizes.height.small} onClick={goToCloneAndOpen}>
+                <Button type="submit" iconAfter="arrow-right" height={StyleConstants.button.sizes.small.height} onClick={goToCloneAndOpen}>
                     I'm done, let's continue
                 </Button>
             </ActionsPanel>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Pane, Tablist, Button,Text } from "evergreen-ui";
+import { Pane, Tablist, Button, Text } from "evergreen-ui";
 
 import { StepPage, StepPageTab } from "../../styles/generic-step.styles";
 import StyleConstants from '../../styles/constants';
@@ -52,13 +52,13 @@ export const VendorsDetailsContainer = styled(Pane).attrs({
 export const VendorDetailsTabPanel = styled(Pane).attrs({
   role: "tabpanel"
 })`
-  display: ${props => props.active ? "block": "none"}
+  display: ${({ active }) => active ? "block" : "none"}
 `;
 
 export const VendorLinkButton = styled(Button).attrs({
   is: "a"
 })`
-  height: ${StyleConstants.button.sizes.height.small}px;
+  height: ${StyleConstants.button.sizes.small.height}px;
   margin-top: 0.4rem;
 `;
 

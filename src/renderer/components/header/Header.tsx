@@ -8,7 +8,7 @@ import "./header.scss";
 
 const Header: FunctionComponent<StepProps> = ({moveToStep}) => (
     <Pane is="header" id="fss-header" background="tint2" border>
-        <BackButton id="fss-header-back-button" height={StyleConstants.button.sizes.height.small} onClick={() => moveToStep()} />
+        <BackButton id="fss-header-back-button" height={StyleConstants.button.sizes.small.height} onClick={() => moveToStep()} />
     </Pane>
 );
 

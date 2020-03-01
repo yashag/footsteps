@@ -1,32 +1,32 @@
-import {Button, Heading, Paragraph} from "evergreen-ui";
+import {Button} from "evergreen-ui";
 import React, {FunctionComponent} from "react";
 
 import Logo from "../../../../resources/footsteps.svg";
 import StyleConstants from "../../styles/constants";
-import "./welcome-page.scss";
 
 import {StepProps, Steps} from "../../types/steps/steps";
+import { WelcomeStepPage, WelcomeTitle, WelcomeTitleText, WelcomeContent, ActionsPanel } from "./welcome-page.styles";
 
 const WelcomePage: FunctionComponent<StepProps> = ({moveToStep}) => {
     const goToProjectTypeSelection: () => void = () => { moveToStep(Steps.PROJECT_TYPE); };
 
     return (
-        <div id="fss-welcome-page">
-            <div id="fss-welcome-title">
+        <WelcomeStepPage>
+            <WelcomeTitle>
                 <Logo className="fss-logo" fill={StyleConstants.palette.mainColor}/>
-                <Heading id="fss-welcome-title-text" is="h1" size={900}>Welcome to Footsteps!</Heading>
-            </div>
-            <Paragraph id="fss-welcome-content" marginTop="default">
+                <WelcomeTitleText>Welcome to Footsteps!</WelcomeTitleText>
+            </WelcomeTitle>
+            <WelcomeContent>
                 Footsteps will help you and guide you through the process of creating your own project.
                 You no longer have to memorize and worry about steps you forgot about.
                 Just follow the footsteps!
-            </Paragraph>
-            <div id="fss-welcome-actions">
-                <Button iconAfter="arrow-right" height={36} onClick={goToProjectTypeSelection}>
+            </WelcomeContent>
+            <ActionsPanel>
+                <Button iconAfter="arrow-right" height={StyleConstants.button.sizes.small.height} onClick={goToProjectTypeSelection}>
                     Let's start
                 </Button>
-            </div>
-        </div>
+            </ActionsPanel>
+        </WelcomeStepPage>
     );
 };
 

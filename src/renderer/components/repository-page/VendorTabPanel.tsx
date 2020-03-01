@@ -24,7 +24,7 @@ const VendorTabPanel: FunctionComponent<IVendorTabPanelProps> = ({ tab, active }
                 When you are done, press "create" and enjoy the birth of your new project!
         </Paragraph>
             <VendorLinkButton href={tab.newRepoLink} iconBefore="git-repo">
-                <Text size={StyleConstants.button.sizes.text}>Open {tab.name} and create a new repository</Text>
+                <Text size={StyleConstants.button.sizes.small.text}>Open {tab.name} and create a new repository</Text>
             </VendorLinkButton>
             <Paragraph marginTop={14}>
                 Now that you have created your repository, you should clone your project to a local directory.
@@ -38,7 +38,7 @@ const VendorTabPanel: FunctionComponent<IVendorTabPanelProps> = ({ tab, active }
             </ProjectTip>
             </Pane>
             <VendorLinkButton href={tab.cloneHelpLink} iconBefore="help">
-                <Text size={StyleConstants.button.sizes.text}>I need help with cloning the project</Text>
+                <Text size={StyleConstants.button.sizes.small.text}>I need help with cloning the project</Text>
             </VendorLinkButton>
         </VendorDetailsTabPanel>
     );
