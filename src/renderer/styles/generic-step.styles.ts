@@ -7,7 +7,7 @@ export const StepPage = styled.div`
   display: grid;
   grid-auto-rows: minmax(min-content, max-content);
 
-  height: ${StyleConstants.size.full};
+  height: ${StyleConstants.sizes.full};
 
   padding: 0 4rem;
 `;
@@ -32,7 +32,7 @@ export const StepPageDescription = styled(Paragraph).attrs({
 
 const buttonIconSize: number = 1.6;
 export const StepPageButton = styled(Button)`
-  & > svg.fss-step-page-button-icon {
+  & > svg.footsteps-button-icon {
     width: ${buttonIconSize}rem;
     height: ${buttonIconSize}rem;
   }
@@ -40,7 +40,7 @@ export const StepPageButton = styled(Button)`
 
 const tabIconSize: number = 1;
 export const StepPageTab = styled(SidebarTab)`
-  &[role="tab"] > svg.fss-step-page-button-icon, &[role="tab"] > span > svg.fss-step-page-button-icon {
+  &[role="tab"] > svg.footsteps-button-icon, &[role="tab"] > span > svg.footsteps-button-icon {
     margin-right: 0.6rem;
     width: ${tabIconSize}rem;
     height: ${tabIconSize}rem;
@@ -62,7 +62,7 @@ export const StepPageTab = styled(SidebarTab)`
 
 export const StepPageSeparator = styled.div`
   height: 2px;
-  width: ${StyleConstants.size.full};
+  width: ${StyleConstants.sizes.full};
   margin: 1rem 0;
 
   background-color: #ebecec;

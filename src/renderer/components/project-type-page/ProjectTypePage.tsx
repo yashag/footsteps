@@ -28,7 +28,7 @@ const ProjectTypePage: FunctionComponent<StepProps> = ({moveToStep}) => {
                     <ProjectTypeButtonText size={StyleConstants.button.sizes.normal.text}>Generic</ProjectTypeButtonText>
                 </ProjectTypeButton>
                 <ProjectTypeButton disabled>
-                    <Icon icon={<NodeJSIcon className="fss-step-page-button-icon" />} />
+                    <Icon icon={<NodeJSIcon className="footsteps-button-icon" />} />
                     <ProjectTypeButtonText size={StyleConstants.button.sizes.normal.text}>Node.js</ProjectTypeButtonText>
                 </ProjectTypeButton>
             </ActionsPanel>

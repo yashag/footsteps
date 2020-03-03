@@ -16,10 +16,13 @@ export default {
       normal: 500 as const
     }
   },
+  footer: {
+    height: "2rem"
+  },
   spacing: {
     small: "1rem"
   },
-  size: {
+  sizes: {
     full: "100%"
   },
   palette: {

@@ -6,9 +6,7 @@ import ProjectInfoContextProvider from "../../contexts/ProjectInfoContext";
 import StepsManager from "../../services/navigation/steps-manager";
 import STEPS_MAPPING from "../../services/navigation/steps-mapping";
 
-import Header from "../header/Header";
-
-import "./steps-container.scss";
+import { FootstepsStepsContainer, FootStepsHeaderContainer } from "./steps-container.styles";
 
 const initialState = {step: Steps.WELCOME};
 type StepsContainerState = Readonly<typeof initialState>;
@@ -42,12 +40,12 @@ class StepsContainer extends Component<{}, StepsContainerState> {
 
         return (
             <>
-                {this.state.step ? <Header moveToStep={this.moveToStep} /> : null}
-                <div id="fss-steps-container">
+                {this.state.step ? <FootStepsHeaderContainer moveToStep={this.moveToStep} /> : null}
+                <FootstepsStepsContainer>
                     <ProjectInfoContextProvider>
                         {currentStepComponent ? React.createElement(currentStepComponent, {moveToStep: this.moveToStep}) : null}
                     </ProjectInfoContextProvider>
-                </div>
+                </FootstepsStepsContainer>
             </>
         );
     }

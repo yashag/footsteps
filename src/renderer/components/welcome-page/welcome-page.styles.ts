@@ -16,7 +16,6 @@ export const WelcomeStepPage = styled(StepPage)`
           "actions actions actions";
   justify-content: center;
   align-content: stretch;
-  margin-top: 1rem;
 `;
 
 export const WelcomeTitle = styled.div`
@@ -25,6 +24,8 @@ export const WelcomeTitle = styled.div`
   flex-flow: column;
   justify-content: center;
   align-items: center;
+
+  margin-top: 5rem;
 
   .fss-logo {
     width: 3rem;

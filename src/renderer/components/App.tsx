@@ -5,13 +5,15 @@ import React, {FunctionComponent} from "react";
 import Footer from "./footer/Footer";
 import StepsContainer from "./steps-manager/StepsContainer";
 
-import "./app.scss";
+import GlobalStyle from "../styles/index.styles";
+import { FootstepsApp } from "./app.styles";
 
 const App: FunctionComponent = () => (
     <>
-        <main id="fss-app">
+        <GlobalStyle />
+        <FootstepsApp>
             <StepsContainer />
-        </main>
+        </FootstepsApp>
         <Footer />
     </>
 );
