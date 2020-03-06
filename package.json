@@ -9,7 +9,8 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "tslint -c tslint.json -p tsconfig.json"
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "rebuild": "electron-rebuild -f -w footsteps"
   },
   "keywords": [
     "guide",
@@ -78,13 +79,13 @@
     }
   },
   "devDependencies": {
-    "@electron-forge/cli": "6.0.0-beta.47",
-    "@electron-forge/maker-deb": "6.0.0-beta.47",
-    "@electron-forge/maker-dmg": "^6.0.0-beta.47",
-    "@electron-forge/maker-rpm": "6.0.0-beta.47",
-    "@electron-forge/maker-squirrel": "6.0.0-beta.47",
-    "@electron-forge/maker-zip": "6.0.0-beta.47",
-    "@electron-forge/plugin-webpack": "6.0.0-beta.47",
+    "@electron-forge/cli": "^6.0.0-beta.47",
+    "@electron-forge/maker-deb": "^6.0.0-beta.47",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.50",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.47",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.47",
+    "@electron-forge/maker-zip": "^6.0.0-beta.47",
+    "@electron-forge/plugin-webpack": "^6.0.0-beta.47",
     "@hot-loader/react-dom": "^16.12.0",
     "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
     "@svgr/webpack": "^5.2.0",
@@ -94,7 +95,8 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.7",
     "css-loader": "^3.4.2",
-    "electron": "^8.0.2",
+    "electron": "^8.0.3",
+    "electron-rebuild": "^1.10.0",
     "fork-ts-checker-webpack-plugin": "^4.0.5",
     "node-loader": "^0.6.0",
     "react-hot-loader": "^4.12.19",
