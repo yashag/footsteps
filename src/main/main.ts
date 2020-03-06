@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron';
+import path from "path";
 
 import browserWindowOptions from './browser-window-options.json';
 
@@ -15,7 +16,10 @@ let mainWindow: Electron.BrowserWindow | null;
 
 function createWindow(): void  {
   // Create the browser window.
-  mainWindow = new BrowserWindow(browserWindowOptions);
+  mainWindow = new BrowserWindow({
+    ...browserWindowOptions,
+    icon: path.join(__dirname, "../../resources/footsteps-inverted.png")
+  });
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);

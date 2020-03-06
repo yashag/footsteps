@@ -1,11 +1,11 @@
 import {Button} from "evergreen-ui";
 import React, {FunctionComponent} from "react";
 
-import Logo from "../../../../resources/footsteps.svg";
+import Logo from "../../../../resources/footsteps.png";
 import StyleConstants from "../../styles/constants";
 
 import {StepProps, Steps} from "../../types/steps/steps";
-import { WelcomeStepPage, WelcomeTitle, WelcomeTitleText, WelcomeContent, ActionsPanel } from "./welcome-page.styles";
+import { WelcomeStepPage, WelcomeTitle, WelcomeTitleText, WelcomeContent, ActionsPanel, FootstepsLogo } from "./welcome-page.styles";
 
 const WelcomePage: FunctionComponent<StepProps> = ({moveToStep}) => {
     const goToProjectTypeSelection: () => void = () => { moveToStep(Steps.PROJECT_TYPE); };
@@ -13,7 +13,7 @@ const WelcomePage: FunctionComponent<StepProps> = ({moveToStep}) => {
     return (
         <WelcomeStepPage>
             <WelcomeTitle>
-                <Logo className="fss-logo" fill={StyleConstants.palette.mainColor}/>
+                <FootstepsLogo src={Logo} />
                 <WelcomeTitleText>Welcome to Footsteps!</WelcomeTitleText>
             </WelcomeTitle>
             <WelcomeContent>

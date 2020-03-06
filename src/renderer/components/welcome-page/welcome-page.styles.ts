@@ -26,21 +26,22 @@ export const WelcomeTitle = styled.div`
   align-items: center;
 
   margin-top: 5rem;
+`;
 
-  .fss-logo {
-    width: 3rem;
-    height: 3rem;
-  }
+export const FootstepsLogo = styled.img`
+  width: 4.6rem;
+  height: 4.6rem;
 `;
 
 export const WelcomeTitleText = styled(StepPageTitle)`
+  margin-top: 0;
   text-align: center;
 `;
 
 export const WelcomeContent = styled(Paragraph)`
   grid-area: content;
+  margin-top: ${StyleConstants.spacing.small};
 
-  margin: 0;
   padding: 0 4rem;
 
   font-size: 26px;
