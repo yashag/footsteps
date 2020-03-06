@@ -46,3 +46,11 @@ export const InstructionExampleMarkdownText = styled(Paragraph).attrs({
     padding: 0.4rem 0;
     white-space: pre-wrap;
 `;
+
+export const ReadMoreText = styled(Paragraph).attrs({
+    size: 500,
+    color: "dark",
+})`
+    margin-top: 2rem;
+    padding: 0.4rem 0;
+`;
