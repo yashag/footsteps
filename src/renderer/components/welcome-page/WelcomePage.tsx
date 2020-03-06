@@ -6,6 +6,7 @@ import StyleConstants from "../../styles/constants";
 
 import {StepProps, Steps} from "../../types/steps/steps";
 import { WelcomeStepPage, WelcomeTitle, WelcomeTitleText, WelcomeContent, ActionsPanel, FootstepsLogo } from "./welcome-page.styles";
+import { StepPageButton } from "../../styles/generic-step.styles";
 
 const WelcomePage: FunctionComponent<StepProps> = ({moveToStep}) => {
     const goToProjectTypeSelection: () => void = () => { moveToStep(Steps.PROJECT_TYPE); };
@@ -22,9 +23,9 @@ const WelcomePage: FunctionComponent<StepProps> = ({moveToStep}) => {
                 Just follow the footsteps!
             </WelcomeContent>
             <ActionsPanel>
-                <Button iconAfter="arrow-right" height={StyleConstants.button.sizes.small.height} onClick={goToProjectTypeSelection}>
+                <StepPageButton iconAfter="arrow-right" height={StyleConstants.button.sizes.small.height} onClick={goToProjectTypeSelection}>
                     Let's start
-                </Button>
+                </StepPageButton>
             </ActionsPanel>
         </WelcomeStepPage>
     );

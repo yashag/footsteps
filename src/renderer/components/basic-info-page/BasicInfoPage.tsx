@@ -1,11 +1,10 @@
-import {Button} from "evergreen-ui";
 import React, {ChangeEvent, Dispatch, FormEvent, FunctionComponent, SetStateAction, useContext, useState} from "react";
 
 import {IProjectInfoContextConsumer, ProjectInfoContext} from "../../contexts/ProjectInfoContext";
 import {StepProps, Steps} from "../../types/steps/steps";
 
 import StyleConstants from "../../styles/constants";
-import { StepPageTitle, StepPageDescription } from "../../styles/generic-step.styles";
+import { StepPageTitle, StepPageDescription, StepPageButton } from "../../styles/generic-step.styles";
 import { BasicInfoStepPageHeader, BasicInfoStepPage, BasicInfoFormField, BasicInfoForm } from "./basic-info-page.styles";
 
 const BasicInfoPage: FunctionComponent<StepProps> = ({moveToStep}) => {
@@ -53,7 +52,7 @@ const BasicInfoPage: FunctionComponent<StepProps> = ({moveToStep}) => {
                                 placeholder="Project description"
                                 value={projectDescription}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => setProjectDescription(e.target.value)} />
-                <Button type="submit" iconAfter="arrow-right" height={StyleConstants.button.sizes.small.height}>Continue</Button>
+                <StepPageButton type="submit" iconAfter="arrow-right" height={StyleConstants.button.sizes.small.height}>Continue</StepPageButton>
             </BasicInfoForm>
         </BasicInfoStepPage>
     );

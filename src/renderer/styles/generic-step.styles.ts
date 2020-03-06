@@ -32,6 +32,14 @@ export const StepPageDescription = styled(Paragraph).attrs({
 
 const buttonIconSize: number = 1.6;
 export const StepPageButton = styled(Button)`
+  &:not([disabled]):not([data-disabled]):focus:active {
+    background-color: #daf3ebba;
+  }
+
+  &:not([disabled]):not([data-disabled]):focus, &:not([disabled]):not([data-disabled]):focus:active {
+    box-shadow: 0 0 0 2px #bfe8da9e;
+  }
+
   & > svg.footsteps-button-icon {
     width: ${buttonIconSize}rem;
     height: ${buttonIconSize}rem;

@@ -1,4 +1,4 @@
-import { Button, Code, Icon, Pane, Text } from "evergreen-ui";
+import { Code, Icon, Pane, Text } from "evergreen-ui";
 import React, { Dispatch, FunctionComponent, SetStateAction, useContext, useState } from "react";
 
 import { IProjectInfoContextConsumer, ProjectInfoContext } from "../../contexts/ProjectInfoContext";
@@ -7,7 +7,7 @@ import {repositoryVendors, IRepositoryVendorInfo} from "./repository-vendors";
 import VendorTabPanel from './VendorTabPanel';
 
 import StyleConstants from "../../styles/constants";
-import { StepPageTitle, StepPageDescription } from "../../styles/generic-step.styles";
+import { StepPageTitle, StepPageDescription, StepPageButton } from "../../styles/generic-step.styles";
 import { RespositoryStepPageHeader, ProjectInfo, ProjectVendors, VendorsTablist, VendorTab, VendorsDetailsContainer, ActionsPanel, RepositoryStepPage } from "./repository-page.styles";
 
 
@@ -54,9 +54,9 @@ const RepositoryPage: FunctionComponent<StepProps> = ({ moveToStep }) => {
                 </VendorsDetailsContainer>
             </ProjectVendors>
             <ActionsPanel>
-                <Button type="submit" iconAfter="arrow-right" height={StyleConstants.button.sizes.small.height} onClick={goToCloneAndOpen}>
+                <StepPageButton type="submit" iconAfter="arrow-right" height={StyleConstants.button.sizes.small.height} onClick={goToCloneAndOpen}>
                     I'm done, let's continue
-                </Button>
+                </StepPageButton>
             </ActionsPanel>
         </RepositoryStepPage>
     );
