@@ -28,9 +28,21 @@ export const WelcomeTitle = styled.div`
   margin-top: 5rem;
 `;
 
+const logoWidth = 22;
+const logoHeight = 13;
 export const FootstepsLogo = styled.img`
-  width: 4.6rem;
-  height: 4.6rem;
+  width: ${logoWidth}rem;
+  height: ${logoHeight}rem;
+
+  @media (max-width: 600px) {
+    width: ${logoWidth / 2}rem;
+    height: ${logoHeight / 2}rem;
+  }
+
+  @media (max-width: 250px) {
+    width: ${logoWidth / 4}rem;
+    height: ${logoHeight / 4}rem;
+  }
 `;
 
 export const WelcomeTitleText = styled(StepPageTitle)`
@@ -47,6 +59,16 @@ export const WelcomeContent = styled(Paragraph)`
   font-size: 26px;
   line-height: 34px;
   text-align: center;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+    padding: 0;
+  }
+
+  @media (max-width: 250px) {
+    font-size: 10px;
+    padding: 0;
+  }
 `;
 
 /* Page actions */

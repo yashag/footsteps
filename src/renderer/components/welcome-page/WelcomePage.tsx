@@ -1,7 +1,7 @@
 import {Button} from "evergreen-ui";
 import React, {FunctionComponent} from "react";
 
-import Logo from "../../../../resources/footsteps.png";
+import Logo from "../../../../resources/footsteps-title.png";
 import StyleConstants from "../../styles/constants";
 
 import {StepProps, Steps} from "../../types/steps/steps";
@@ -15,7 +15,7 @@ const WelcomePage: FunctionComponent<StepProps> = ({moveToStep}) => {
         <WelcomeStepPage>
             <WelcomeTitle>
                 <FootstepsLogo src={Logo} />
-                <WelcomeTitleText>Welcome to Footsteps!</WelcomeTitleText>
+                {/* <WelcomeTitleText>Welcome to Footsteps!</WelcomeTitleText> */}
             </WelcomeTitle>
             <WelcomeContent>
                 Footsteps will help you and guide you through the process of creating your own project.
