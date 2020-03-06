@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from 'electron';
+import path from "path";
 
-import * as browserWindowOptions from './browser-window-options.json';
+import browserWindowOptions from './browser-window-options.json';
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 
@@ -15,13 +16,16 @@ let mainWindow: Electron.BrowserWindow | null;
 
 function createWindow(): void  {
   // Create the browser window.
-  mainWindow = new BrowserWindow(browserWindowOptions);
+  mainWindow = new BrowserWindow({
+    ...browserWindowOptions,
+    icon: path.join(__dirname, "../../resources/footsteps-inverted.png")
+  });
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
@@ -52,6 +56,19 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+app.on('web-contents-created', (e, contents) => {
+  contents.on('new-window', (event, url) => {
+    event.preventDefault();
+    require('open')(url);
+  });
+  contents.on('will-navigate', (event, url) => {
+    if (url !== contents.getURL()) {
+      event.preventDefault();
+      require('open')(url);
+    }
+  });
 });
 
 // In this file you can include the rest of your app's specific main process

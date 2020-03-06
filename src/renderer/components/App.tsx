@@ -1,11 +1,21 @@
-import React from 'react';
-import {hot} from 'react-hot-loader/root';
+import {hot} from "react-hot-loader/root";
 
-export default hot((): JSX.Element =>
-    (
-        <div>
-            <h1>
-                Your Electron App
-            </h1>
-        </div>
-    ));
+import React, {FunctionComponent} from "react";
+
+import Footer from "./footer/Footer";
+import StepsContainer from "./steps-manager/StepsContainer";
+
+import GlobalStyle from "../styles/index.styles";
+import { FootstepsApp } from "./app.styles";
+
+const App: FunctionComponent = () => (
+    <>
+        <GlobalStyle />
+        <FootstepsApp>
+            <StepsContainer />
+        </FootstepsApp>
+        <Footer />
+    </>
+);
+
+export default hot(App);

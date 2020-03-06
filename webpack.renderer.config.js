@@ -2,15 +2,8 @@ const path = require('path');
 const rules = require('./webpack.rules');
 const plugins = require('./webpack.plugins');
 
-rules.push({
-  test: /\.css$/,
-  use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
-});
-
 module.exports = {
-  module: {
-    rules,
-  },
+  module: { rules },
   target: 'electron-renderer',
   plugins: plugins,
   resolve: {
@@ -18,8 +11,9 @@ module.exports = {
       '@main': path.join(__dirname, 'src/main/main'),
       '@models': path.join(__dirname, 'src/models'),
       '@renderer': path.join(__dirname, 'src/renderer/renderer'),
+      '@resources': path.join(__dirname, 'resources'),
       'react-dom': '@hot-loader/react-dom'
     },
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css']
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.scss']
   }
 };

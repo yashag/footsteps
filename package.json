@@ -2,14 +2,15 @@
   "name": "footsteps",
   "productName": "footsteps",
   "version": "1.0.0",
-  "description": "A visual guide to creating node.js projects/packages",
+  "description": "A visual interactive guide for creating projects/packages",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "tslint -c tslint.json -p tsconfig.json"
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "rebuild": "electron-rebuild -f -w footsteps"
   },
   "keywords": [
     "guide",
@@ -27,19 +28,22 @@
   "homepage": "https://github.com/yashag/footsteps#readme",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "./resources/footsteps-inverted.png"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-dmg",
           "config": {
-            "background": "./assets/footsteps.png",
+            "background": "./resources/footsteps-inverted.png",
             "format": "ULFO"
           }
         },
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "footsteps"
+            "name": "footsteps",
+            "icon": "./resources/footsteps-inverted.png"
           }
         },
         {
@@ -78,35 +82,46 @@
     }
   },
   "devDependencies": {
-    "@electron-forge/cli": "6.0.0-beta.47",
-    "@electron-forge/maker-deb": "6.0.0-beta.47",
-    "@electron-forge/maker-dmg": "^6.0.0-beta.47",
-    "@electron-forge/maker-rpm": "6.0.0-beta.47",
-    "@electron-forge/maker-squirrel": "6.0.0-beta.47",
-    "@electron-forge/maker-zip": "6.0.0-beta.47",
-    "@electron-forge/plugin-webpack": "6.0.0-beta.47",
-    "@hot-loader/react-dom": "^16.11.0",
+    "@electron-forge/cli": "^6.0.0-beta.47",
+    "@electron-forge/maker-deb": "^6.0.0-beta.47",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.50",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.47",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.47",
+    "@electron-forge/maker-zip": "^6.0.0-beta.47",
+    "@electron-forge/plugin-webpack": "^6.0.0-beta.47",
+    "@hot-loader/react-dom": "^16.12.0",
     "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
-    "@types/jest": "^24.0.25",
-    "@types/node": "^13.1.2",
+    "@svgr/webpack": "^5.2.0",
+    "@types/jest": "^25.1.3",
+    "@types/node": "^13.7.7",
+    "@types/styled-components": "^5.0.1",
     "babel-loader": "^8.0.6",
-    "css-loader": "^3.4.0",
-    "electron": "7.1.7",
-    "fork-ts-checker-webpack-plugin": "^3.1.1",
+    "babel-plugin-styled-components": "^1.10.7",
+    "css-loader": "^3.4.2",
+    "electron": "^8.0.3",
+    "electron-rebuild": "^1.10.0",
+    "fork-ts-checker-webpack-plugin": "^4.0.5",
     "node-loader": "^0.6.0",
-    "react-hot-loader": "^4.12.18",
-    "style-loader": "^0.23.1",
+    "react-hot-loader": "^4.12.19",
+    "style-loader": "^1.1.3",
     "ts-loader": "^6.2.1",
-    "tslint": "^5.20.0",
-    "typescript": "^3.7.0"
+    "tslint": "^6.0.0",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.4",
+    "@material-ui/core": "^4.9.5",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
     "electron-squirrel-startup": "^1.0.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "evergreen-ui": "^4.23.0",
+    "markdown-to-jsx": "^6.11.0",
+    "node-sass": "^4.13.1",
+    "open": "^7.0.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.0"
+    "react-scripts": "^3.4.0",
+    "sass-loader": "^8.0.2",
+    "styled-components": "^5.0.1"
   }
 }
