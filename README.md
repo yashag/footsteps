@@ -1,4 +1,4 @@
-![Image description](resources/footsteps-title2.png)
+![Footsteps](resources/footsteps-title2.png)
 
 
 [![GitHub license](https://img.shields.io/badge/License-MIT-yellow.svg)][license-url]
@@ -20,6 +20,10 @@ cd footsteps
 
 npm start
 ```
+
+## Usage
+
+![Usage GIF](resources/footsteps-usage.gif)
 
 ## Support
 
