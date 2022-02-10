@@ -115,7 +115,7 @@
     "electron-squirrel-startup": "^1.0.0",
     "evergreen-ui": "^4.23.0",
     "markdown-to-jsx": "^6.11.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "open": "^7.0.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
